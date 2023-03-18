@@ -31,8 +31,16 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "BASE_URL", "\"" + getEnvUrl() + "\""
+            debuggable true
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             buildConfigField("String", "BASE_URL", "\"${getEnvUrl()}\"")
+            shrinkResources false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -79,6 +87,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:2.6.0"
 
     /** OkHttp */
+
+    implementation "com.squareup.okhttp3:okhttp:4.0.0"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:3.14.1"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
@@ -101,4 +111,14 @@ dependencies {
     androidTestImplementation "androidx.test:core:1.5.0"
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.0.0"
+
+    // For instrumentation tests
+    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.45'
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-compiler:2.45'
+
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.45'
+    testAnnotationProcessor 'com.google.dagger:hilt-compiler:2.45'
 }

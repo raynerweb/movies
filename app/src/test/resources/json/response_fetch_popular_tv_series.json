@@ -1,0 +1,398 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "backdrop_path": "/xgZ9AhvXqi9aSDWzCpoC9JAkLPY.jpg",
+      "first_air_date": "2019-01-01",
+      "genre_ids": [
+        35
+      ],
+      "id": 85425,
+      "name": "Dear Heirs",
+      "origin_country": [
+        "HU"
+      ],
+      "original_language": "hu",
+      "original_name": "Drága örökösök",
+      "overview": "Hungarian remake of the Bulgarian series about a disconnect family living together in order to get an inheritance.",
+      "popularity": 1948.879,
+      "poster_path": "/xDOUahrwEsgDlejXjZLc9lOljSx.jpg",
+      "vote_average": 5.3,
+      "vote_count": 7
+    },
+    {
+      "backdrop_path": "/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg",
+      "first_air_date": "2023-01-15",
+      "genre_ids": [
+        18
+      ],
+      "id": 100088,
+      "name": "The Last of Us",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last of Us",
+      "overview": "Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival.",
+      "popularity": 3069.339,
+      "poster_path": "/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+      "vote_average": 8.8,
+      "vote_count": 2715
+    },
+    {
+      "backdrop_path": "/3FLHePl9Y3n4BidLVjIA9qSRDOE.jpg",
+      "first_air_date": "2021-08-03",
+      "genre_ids": [
+        10766
+      ],
+      "id": 130542,
+      "name": "Bhagya Lakshmi",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "Bhagya Lakshmi",
+      "overview": "Hailing from a middle-class family, Lakshmi’s life is upended when she realises that her marriage to Rishi Oberoi, an industrialist’s son, is a sham to keep his death at bay.",
+      "popularity": 2154.103,
+      "poster_path": "/7wuKrFvbX7kAIF0ctotARsqayPo.jpg",
+      "vote_average": 5.2,
+      "vote_count": 31
+    },
+    {
+      "backdrop_path": null,
+      "first_air_date": "2015-03-25",
+      "genre_ids": [
+        10764
+      ],
+      "id": 136598,
+      "name": "First Dates NL",
+      "origin_country": [
+        "NL"
+      ],
+      "original_language": "nl",
+      "original_name": "First Dates NL",
+      "overview": "",
+      "popularity": 1256.701,
+      "poster_path": "/48CLPsZ1HRFFSGfZx2SY7FHihyC.jpg",
+      "vote_average": 5,
+      "vote_count": 1
+    },
+    {
+      "backdrop_path": "/mAJ84W6I8I272Da87qplS2Dp9ST.jpg",
+      "first_air_date": "2023-01-23",
+      "genre_ids": [
+        9648,
+        18
+      ],
+      "id": 202250,
+      "name": "Dirty Linen",
+      "origin_country": [
+        "PH"
+      ],
+      "original_language": "tl",
+      "original_name": "Dirty Linen",
+      "overview": "To exact vengeance, a young woman infiltrates the household of an influential family as a housemaid to expose their dirty secrets. However, love will get in the way of her revenge plot.",
+      "popularity": 1211.806,
+      "poster_path": "/ujlkQtHAVShWyWTloGU2Vh5Jbo9.jpg",
+      "vote_average": 4.9,
+      "vote_count": 8
+    },
+    {
+      "backdrop_path": "/1vgdmeW6keP47DQ1tGwfVCdUKqu.jpg",
+      "first_air_date": "2020-10-12",
+      "genre_ids": [
+        35
+      ],
+      "id": 111551,
+      "name": "Haireta mou ton Platano",
+      "origin_country": [
+        "GR"
+      ],
+      "original_language": "el",
+      "original_name": "Χαιρέτα μου τον Πλάτανο",
+      "overview": "The small Greek village of Platanos (Plane Tree) buries the elderly recluse Vangelas and notifies the deceased's estranged children and grandchildren about his death. Vangela's will leaves 3 million euros to his family, but requires them to move to the village and obey certain terms in order to inherit.",
+      "popularity": 1108.298,
+      "poster_path": "/vAu6or1W4G1q7wJxQfDmATtnIg.jpg",
+      "vote_average": 5.5,
+      "vote_count": 8
+    },
+    {
+      "backdrop_path": "/6Lw54zxm6BAEKJeGlabyzzR5Juu.jpg",
+      "first_air_date": "2019-11-12",
+      "genre_ids": [
+        10765,
+        10759,
+        18
+      ],
+      "id": 82856,
+      "name": "The Mandalorian",
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Mandalorian",
+      "overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
+      "popularity": 1525.052,
+      "poster_path": "/eU1i6eHXlzMOlEq0ku1Rzq7Y4wA.jpg",
+      "vote_average": 8.5,
+      "vote_count": 8587
+    },
+    {
+      "backdrop_path": "/t2rAdgjSh0WYbXzdOB5zTDqzdCI.jpg",
+      "first_air_date": "2022-11-02",
+      "genre_ids": [
+        18
+      ],
+      "id": 213713,
+      "name": "Faltu",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "Faltu",
+      "overview": "What's in a name? Amidst the arid landscape of Rajasthan, a young woman with dreamy eyes struggles to prove her worth.",
+      "popularity": 1668.175,
+      "poster_path": "/lgyFuoXs7GvKJN0mNm7z7OMOFuZ.jpg",
+      "vote_average": 5.3,
+      "vote_count": 13
+    },
+    {
+      "backdrop_path": "/3n2TjKw3HrwDqgVgcynvantOfS3.jpg",
+      "first_air_date": "2023-01-04",
+      "genre_ids": [
+        18,
+        10751
+      ],
+      "id": 215103,
+      "name": "Teri Meri Doriyaann",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "तेरी मेरी डोरियाँ",
+      "overview": "It’s hate at first sight for Sahiba and Angad! But destined to be together, their lives get intertwined by a marriage alliance, and a love-hate story ensues.",
+      "popularity": 1615.314,
+      "poster_path": "/4BHDmYiuSnNL3nqKIOzLJKYX4AN.jpg",
+      "vote_average": 6,
+      "vote_count": 1
+    },
+    {
+      "backdrop_path": "/jIV5weV19wH02rnuWyMtYI4dYC8.jpg",
+      "first_air_date": "2023-02-13",
+      "genre_ids": [
+        10759,
+        35,
+        18
+      ],
+      "id": 215803,
+      "name": "Batang Quiapo",
+      "origin_country": [
+        "PH"
+      ],
+      "original_language": "tl",
+      "original_name": "Batang Quiapo",
+      "overview": "A young man rises to be one of the biggest outlaws in the neighborhood while he navigates his way in life to survive in Quiapo. Hoping to earn the affection of his parents, his feat draws him closer to the truth about his identity.",
+      "popularity": 983.2,
+      "poster_path": "/9McqS8mgMf5NJCAKZIY6J1oOl8y.jpg",
+      "vote_average": 6.3,
+      "vote_count": 3
+    },
+    {
+      "backdrop_path": "/dLLafkr4khRj00fvQjZ46oPsY43.jpg",
+      "first_air_date": "2022-11-28",
+      "genre_ids": [
+        18
+      ],
+      "id": 215315,
+      "name": "Rabb Se Hai Dua",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "Rabb Se Hai Dua",
+      "overview": "Dua and her husband are a perfect married couple in the eyes of their family. However, Dua’s life turns upside down when her husband seeks her permission to marry another woman.",
+      "popularity": 1618.365,
+      "poster_path": "/6ikbefd7VeopbBuGgioYMNU5bQj.jpg",
+      "vote_average": 10,
+      "vote_count": 1
+    },
+    {
+      "backdrop_path": "/zJNEXWx3YyWGQioCbutFd5dcNYS.jpg",
+      "first_air_date": "2022-03-21",
+      "genre_ids": [
+        10766,
+        10759,
+        10751
+      ],
+      "id": 157059,
+      "name": "Poliana Moça",
+      "origin_country": [
+        "BR"
+      ],
+      "original_language": "pt",
+      "original_name": "Poliana Moça",
+      "overview": "",
+      "popularity": 920.881,
+      "poster_path": "/sSRFeVwpyUffmqvreVbbNILHYbY.jpg",
+      "vote_average": 6.5,
+      "vote_count": 22
+    },
+    {
+      "backdrop_path": "/nTB21wfQPX1IirpGXTmxr2VsWTC.jpg",
+      "first_air_date": "1955-11-26",
+      "genre_ids": [],
+      "id": 221053,
+      "name": "Zeit im Bild",
+      "origin_country": [
+        "DE"
+      ],
+      "original_language": "de",
+      "original_name": "Zeit im Bild",
+      "overview": "",
+      "popularity": 1475.884,
+      "poster_path": "/axK66NpM828m1vdBvsfYZaXadIp.jpg",
+      "vote_average": 5,
+      "vote_count": 1
+    },
+    {
+      "backdrop_path": null,
+      "first_air_date": "2021-10-27",
+      "genre_ids": [
+        18
+      ],
+      "id": 197109,
+      "name": "Yeh Rishta Kya Kehlata Hai",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "ये रिश्ता क्या कहलाता है",
+      "overview": "A personal tragedy creates a rift in Abhimanyu and Akshara's marital life. Years later, when destiny offers a second chance, will the duo embrace love?",
+      "popularity": 1429.972,
+      "poster_path": "/6ZfiG4P7jivJV0wgcNMSiS2Owhh.jpg",
+      "vote_average": 4.9,
+      "vote_count": 16
+    },
+    {
+      "backdrop_path": "/iQ6ANV7F7I6Lc8rTLSEwDkOO37Q.jpg",
+      "first_air_date": "1988-05-02",
+      "genre_ids": [],
+      "id": 221056,
+      "name": "Tirol Heute",
+      "origin_country": [
+        "DE"
+      ],
+      "original_language": "de",
+      "original_name": "Tirol Heute",
+      "overview": "",
+      "popularity": 1452.146,
+      "poster_path": null,
+      "vote_average": 5,
+      "vote_count": 1
+    },
+    {
+      "backdrop_path": "/o8zk3QmHYMSC7UiJgFk81OFF1sc.jpg",
+      "first_air_date": "2022-08-22",
+      "genre_ids": [
+        10766,
+        18
+      ],
+      "id": 204095,
+      "name": "Mar do Sertão",
+      "origin_country": [
+        "BR"
+      ],
+      "original_language": "pt",
+      "original_name": "Mar do Sertão",
+      "overview": "",
+      "popularity": 778.174,
+      "poster_path": "/ixgnqO8xhFMb1zr8RRFsyeZ9CdD.jpg",
+      "vote_average": 4.7,
+      "vote_count": 25
+    },
+    {
+      "backdrop_path": "/fNe1mUuB7fqd4owhgUXkwSNmd9q.jpg",
+      "first_air_date": "2022-10-03",
+      "genre_ids": [
+        18
+      ],
+      "id": 206706,
+      "name": "Soar High!",
+      "origin_country": [
+        "JP"
+      ],
+      "original_language": "ja",
+      "original_name": "舞いあがれ!",
+      "overview": "Iwakura Mai lives with her parents Kota and Megumi and older brother Haruto. Her father Kota runs a small factory in Higashi Osaka, a district that is known for its craftsmen. Mai is shy and withdrawn. But when she visits her grandmother Shoko who lives on Nagasaki’s Goto Islands which has a rich natural environment, she is entranced by the Baramon kites that catch the wind and soar high in the sky. Wanting to fly high in the sky like these kites, Mai’s longing swells into a dream to become a pilot. Even though she works hard, the path to getting there is tougher than she had imagined. As Mai deepens her ties with the people living in her two hometowns of Higashi Osaka and Goto, her dream eventually takes a new form. She gathers enthusiastic friends to build a small electric plane that can fly to and from the islands. Her dream becomes a wing that carries everyone’s dreams and takes off.",
+      "popularity": 745.349,
+      "poster_path": "/9eeqetibf0GeXEDpC4vYnU324v8.jpg",
+      "vote_average": 5,
+      "vote_count": 3
+    },
+    {
+      "backdrop_path": "/ymkFaEO0UdYXKIgcWZ23TlYIRD9.jpg",
+      "first_air_date": "2020-11-16",
+      "genre_ids": [
+        18,
+        10766,
+        10751
+      ],
+      "id": 113218,
+      "name": "Imlie",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "इमली",
+      "overview": "All Imlie wanted was to create a name for herself in the city. But upon her arrival, she finds herself caught in the middle of Aditya and Malini's love story.",
+      "popularity": 1269.123,
+      "poster_path": "/brajFHvqeitbp7ifevWpFpirS4S.jpg",
+      "vote_average": 5.6,
+      "vote_count": 9
+    },
+    {
+      "backdrop_path": "/qcpC9lv6VLL4Zw45EveYELyje1w.jpg",
+      "first_air_date": "2020-10-05",
+      "genre_ids": [
+        18,
+        10766,
+        10751
+      ],
+      "id": 111453,
+      "name": "Ghum Hai Kisi Ke Pyaar Mein",
+      "origin_country": [
+        "IN"
+      ],
+      "original_language": "hi",
+      "original_name": "घुम है किसिकी प्यार में",
+      "overview": "Virat sacrifices his love to honour the promise he made to a dying man. Trapped between the past and the present, will he find love beyond the chains of duty?",
+      "popularity": 1263.706,
+      "poster_path": "/uNjnoT3RChs2r7O9pDyx7TNBvIj.jpg",
+      "vote_average": 5.9,
+      "vote_count": 32
+    },
+    {
+      "backdrop_path": "/wdtM9fguzCuDVvpR1BvRw3AEmPG.jpg",
+      "first_air_date": "2022-10-11",
+      "genre_ids": [
+        18,
+        80,
+        9648
+      ],
+      "id": 208249,
+      "name": "Game of Witches",
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "original_name": "마녀의 게임",
+      "overview": "Yu Kyung is a successful woman who is proficient enough to become an executive director of Chunha Group when she started as a secretary. She recently found out her daughter is alive, so she plans to get her back and take her revenge. Meanwhile, Hye Soo is a strong girl who faces challenges head-on. She has a daughter with Ji Ho, and she would do anything for her. However, she gets tragically betrayed by Ji Ho, the love of her life, over power and money. How will those two mothers end their fierce revenge?",
+      "popularity": 733.101,
+      "poster_path": "/9bTjPzX48VZGalKEBI6tiknUyLI.jpg",
+      "vote_average": 7,
+      "vote_count": 4
+    }
+  ],
+  "total_pages": 7307,
+  "total_results": 146127
+}
