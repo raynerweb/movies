@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/searchSerieFragment">
+
+    <fragment
+        android:id="@+id/searchSerieFragment"
+        android:name="br.com.raynerweb.movies.ui.fragment.SearchSerieFragment"
+        android:label="fragment_search_serie"
+        tools:layout="@layout/fragment_search_serie" >
+        <action
+            android:id="@+id/action_searchSerieFragment_to_viewSerieFragment"
+            app:destination="@id/viewSerieFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewSerieFragment"
+        android:name="br.com.raynerweb.movies.ui.fragment.ViewSerieFragment"
+        android:label="fragment_view_serie"
+        tools:layout="@layout/fragment_view_serie" />
+</navigation>
