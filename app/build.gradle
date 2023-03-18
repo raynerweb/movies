@@ -5,6 +5,12 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def getEnvUrl() {
+    return rootProject.hasProperty("BASE_URL") ?
+            rootProject.property("BASE_URL") :
+            "You must create the BASE_URL variable on gradle.properties or local.properties file"
+}
+
 android {
     namespace 'br.com.raynerweb.movies'
     compileSdk 33
@@ -19,8 +25,14 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
     buildTypes {
         release {
+            buildConfigField("String", "BASE_URL", "\"${getEnvUrl()}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -74,6 +86,9 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.5.0'
     implementation 'androidx.room:room-ktx:2.5.0'
     kapt 'androidx.room:room-compiler:2.5.0'
+
+    /** Picasso */
+    api "com.squareup.picasso:picasso:2.71828"
 
     /** Tests **/
     testImplementation 'junit:junit:4.13.2'

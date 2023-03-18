@@ -16,5 +16,15 @@
         <!-- Buttons -->
         <item name="materialButtonStyle">@style/PrimaryButtonStyle</item>
 
+        <!-- Icons color -->
+        <item name="colorControlNormal">@color/white</item>
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadline2">@style/Headline2</item>
+        <item name="textAppearanceHeadline3">@style/Headline3</item>
+        <item name="textAppearanceHeadline4">@style/Headline4</item>
+        <item name="textAppearanceBody1">@style/Body1</item>
+        <item name="textAppearanceBody2">@style/Body2</item>
+
     </style>
 </resources>

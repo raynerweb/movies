@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Movies</string>
     <string name="back">Back</string>
+    <string name="backdrop">backdrop</string>
+    <string name="poster">poster</string>
+    <string name="watch_now">Watch Now</string>
 </resources>
