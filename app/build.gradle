@@ -5,6 +5,12 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def getEnvUrl() {
+    return rootProject.hasProperty("BASE_URL") ?
+            rootProject.property("BASE_URL") :
+            "You must create the BASE_URL variable on gradle.properties or local.properties file"
+}
+
 android {
     namespace 'br.com.raynerweb.movies'
     compileSdk 33
@@ -26,6 +32,7 @@ android {
 
     buildTypes {
         release {
+            buildConfigField("String", "BASE_URL", "\"${getEnvUrl()}\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
