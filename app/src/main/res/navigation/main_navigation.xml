@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/searchSerieFragment">
+    app:startDestination="@id/searchSeriesFragment">
 
     <fragment
-        android:id="@+id/searchSerieFragment"
-        android:name="br.com.raynerweb.movies.ui.fragment.SearchSerieFragment"
-        android:label="fragment_search_serie"
-        tools:layout="@layout/fragment_search_serie" >
+        android:id="@+id/searchSeriesFragment"
+        android:name="br.com.raynerweb.movies.ui.fragment.SearchSeriesFragment"
+        android:label="fragment_search_series"
+        tools:layout="@layout/fragment_search_series" >
         <action
-            android:id="@+id/action_searchSerieFragment_to_viewSerieFragment"
-            app:destination="@id/viewSerieFragment" />
+            android:id="@+id/action_searchSeriesFragment_to_viewSeriesFragment"
+            app:destination="@id/viewSeriesFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewSerieFragment"
-        android:name="br.com.raynerweb.movies.ui.fragment.ViewSerieFragment"
-        android:label="fragment_view_serie"
-        tools:layout="@layout/fragment_view_serie" />
+        android:id="@+id/viewSeriesFragment"
+        android:name="br.com.raynerweb.movies.ui.fragment.ViewSeriesFragment"
+        android:label="fragment_view_series"
+        tools:layout="@layout/fragment_view_series" />
 </navigation>
