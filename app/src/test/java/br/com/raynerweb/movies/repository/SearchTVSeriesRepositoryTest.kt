@@ -20,7 +20,7 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
     private val repository = SearchTVSeriesRepositoryImpl(service)
 
     @Test
-    fun `Fetch the list of most popular TV Series and Transform to TVShow`() = runBlocking {
+    fun `Fetch the list of most popular TV Series and Map Result to TVShow`() = runBlocking {
         whenever(service.fetchPopular())
             .thenReturn(
                 Calls.response(

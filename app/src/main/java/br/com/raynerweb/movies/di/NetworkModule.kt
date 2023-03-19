@@ -27,7 +27,12 @@ open class NetworkModule {
 
     @Provides
     @Singleton
-    fun tvSeriesService(retrofit: Retrofit): TVSeriesService = retrofit.create(TVSeriesService::class.java)
+    fun tvSeriesService(retrofit: Retrofit): TVSeriesService =
+        retrofit.create(TVSeriesService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideTokenInterceptor() = TokenInterceptor()
 
     @Provides
     @Singleton
@@ -69,9 +74,9 @@ open class NetworkModule {
     @Provides
     @Singleton
     fun provideGson(): Gson = GsonBuilder().apply {
-            registerTypeAdapter(Date::class.java, JsonDeserializer { json, _, _ ->
-                Date(json.asLong)
-            })
-        }.create()
+        registerTypeAdapter(Date::class.java, JsonDeserializer { json, _, _ ->
+            Date(json.asLong)
+        })
+    }.create()
 
 }
