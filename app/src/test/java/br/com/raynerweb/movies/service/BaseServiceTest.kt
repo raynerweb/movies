@@ -14,9 +14,9 @@ abstract class BaseServiceTest {
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    protected val backend = MockNetworkModule()
+    protected val networkModule = MockNetworkModule()
 
-    protected val retrofit = backend.provideRetrofit(
+    protected val retrofit = networkModule.provideRetrofit(
         okHttpClient = MockNetworkModule().provideOkHttpClient(
             tokenInterceptor = TokenInterceptor()
         ),

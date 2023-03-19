@@ -3,6 +3,7 @@ package br.com.raynerweb.movies.di
 import br.com.raynerweb.movies.BuildConfig
 import br.com.raynerweb.movies.repository.service.TVSeriesService
 import br.com.raynerweb.movies.repository.service.interceptor.TokenInterceptor
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializer
 import dagger.Module
@@ -26,7 +27,7 @@ open class NetworkModule {
 
     @Provides
     @Singleton
-    fun tvSeriesService(retrofit: Retrofit) = retrofit.create(TVSeriesService::class.java)
+    fun tvSeriesService(retrofit: Retrofit): TVSeriesService = retrofit.create(TVSeriesService::class.java)
 
     @Provides
     @Singleton
@@ -62,11 +63,15 @@ open class NetworkModule {
     @Provides
     @Singleton
     fun provideConverterFactory(): Converter.Factory {
-        val builder = GsonBuilder().apply {
+        return GsonConverterFactory.create(provideGson())
+    }
+
+    @Provides
+    @Singleton
+    fun provideGson(): Gson = GsonBuilder().apply {
             registerTypeAdapter(Date::class.java, JsonDeserializer { json, _, _ ->
                 Date(json.asLong)
             })
         }.create()
-        return GsonConverterFactory.create(builder)
-    }
+
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="tvSeries"
-            type="br.com.raynerweb.movies.ui.model.TVSeries" />
+            type="br.com.raynerweb.movies.ui.model.TVShow" />
     </data>
 
     <androidx.cardview.widget.CardView

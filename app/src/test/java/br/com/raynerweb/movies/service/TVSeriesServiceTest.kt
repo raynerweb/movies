@@ -11,7 +11,7 @@ class TVSeriesServiceTest : BaseServiceTest() {
 
     @Before
     fun setup() {
-        service = backend.tvSeriesService(retrofit)
+        service = networkModule.tvSeriesService(retrofit)
     }
 
     @Test

@@ -1,6 +1,6 @@
 package br.com.raynerweb.movies.ui.model
 
-data class TVSeries(
+data class TVShow(
     val title: String,
     val firstAirDate: String,
     val overview: String,
