@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tvShow"
+            type="br.com.raynerweb.movies.ui.model.TVShow" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/center_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <ImageView
+                android:id="@+id/iv_backdrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/backdrop"
+                android:foreground="@drawable/backdrop_foreground"
+                android:scaleType="centerCrop"
+                android:src="@drawable/backdrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:foreground="@drawable/backdrop_foreground"
+                tools:src="@drawable/backdrop" />
+
+            <ImageView
+                android:id="@+id/iv_posterPath"
+                android:layout_width="130dp"
+                android:layout_height="195dp"
+                android:layout_marginTop="96dp"
+                android:contentDescription="@string/poster"
+                android:scaleType="centerCrop"
+                android:src="@drawable/poster"
+                app:layout_constraintEnd_toEndOf="@id/center_guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/black"
+                tools:src="@drawable/poster" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="?attr/textAppearanceHeadline3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="The Last of US"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_posterPath"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/center_guideline"
+                app:layout_constraintTop_toTopOf="@+id/iv_posterPath"
+                tools:text="The Last of US" />
+
+            <TextView
+                android:id="@+id/tv_first_air_date"
+                style="?attr/textAppearanceBody2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2023"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                tools:text="2023" />
+
+            <TextView
+                android:id="@+id/tv_overview"
+                style="?attr/textAppearanceBody1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:ellipsize="end"
+                android:maxLines="5"
+                android:text="Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_title"
+                app:layout_constraintTop_toBottomOf="@+id/tv_first_air_date"
+                tools:text="Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival." />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableEnd="@drawable/baseline_play_circle_filled_24"
+                android:text="More"
+                app:layout_constraintEnd_toEndOf="@+id/iv_posterPath"
+                app:layout_constraintStart_toStartOf="@+id/iv_posterPath"
+                app:layout_constraintTop_toBottomOf="@+id/iv_posterPath" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+</layout>

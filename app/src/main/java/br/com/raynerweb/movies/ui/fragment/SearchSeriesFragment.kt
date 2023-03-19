@@ -7,12 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import br.com.raynerweb.movies.databinding.FragmentSearchSeriesBinding
+import br.com.raynerweb.movies.ui.adapter.TVSeriesAdapter
 import br.com.raynerweb.movies.ui.viewmodel.SearchSeriesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SearchSeriesFragment : Fragment() {
 
     lateinit var binding: FragmentSearchSeriesBinding
     private val viewModel: SearchSeriesViewModel by viewModels()
+
+    private lateinit var tvSeriesAdapter: TVSeriesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,9 +34,22 @@ class SearchSeriesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupViews()
+        subscribe()
+
+        viewModel.fetchPopular()
     }
 
     private fun setupViews() {
+        tvSeriesAdapter = TVSeriesAdapter(mutableListOf())
+        binding.rvTvSeries.adapter = tvSeriesAdapter
+    }
+
+    private fun subscribe() {
+
+        viewModel.tvSeries.observe(viewLifecycleOwner) {
+            tvSeriesAdapter.update(it.toMutableList())
+        }
+
     }
 
 }
