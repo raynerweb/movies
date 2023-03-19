@@ -1,4 +1,4 @@
-package br.com.raynerweb.movies.ui
+package br.com.raynerweb.movies.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
