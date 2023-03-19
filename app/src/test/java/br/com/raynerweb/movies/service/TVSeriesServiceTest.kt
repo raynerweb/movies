@@ -23,4 +23,14 @@ class TVSeriesServiceTest : BaseServiceTest() {
 
         assertNotNull(fetchPopular)
     }
+
+    @Test
+    fun `Fetch by filter`() {
+        val mockResponse = mockSuccessfulResponse("/json/response_fetch_by_filter.json")
+        mockWebServer.enqueue(mockResponse)
+
+        val filtered = service.fetchByFilter("filter").execute().body()
+
+        assertNotNull(filtered)
+    }
 }

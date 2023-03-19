@@ -14,6 +14,7 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.ArgumentMatchers.anyString
 import org.mockito.InjectMocks
 import org.mockito.MockitoAnnotations
 
@@ -77,6 +78,49 @@ class SearchSeriesViewModelTest {
             viewModel.loading.observeForever(loadingObserver)
 
             viewModel.fetchPopular()
+
+            verify(tvSeriesObserver, never()).onChanged(emptyList())
+            verify(emptyResultObserver, times(1)).onChanged(anyOrNull())
+            verify(loadingObserver, times(1)).onChanged(true)
+            verify(loadingObserver, times(1)).onChanged(false)
+        }
+
+    @Test
+    fun `Fetch TV Series by filter`(): Unit = runBlocking {
+        whenever(repository.fetchByFilter(anyString())).thenReturn(list())
+
+        val tvSeriesObserver = spy<Observer<List<TVShow>>>()
+        viewModel.tvSeries.observeForever(tvSeriesObserver)
+
+        val emptyResultObserver = spy<Observer<Unit>>()
+        viewModel.emptyResult.observeForever(emptyResultObserver)
+
+        val loadingObserver = spy<Observer<Boolean>>()
+        viewModel.loading.observeForever(loadingObserver)
+
+        viewModel.fetchByFilter("")
+
+        verify(tvSeriesObserver).onChanged(eq(list()))
+        verify(emptyResultObserver, never()).onChanged(anyOrNull())
+        verify(loadingObserver, times(1)).onChanged(true)
+        verify(loadingObserver, times(1)).onChanged(false)
+    }
+
+    @Test
+    fun `Fetch TV Series by filter and receive an empty list`(): Unit =
+        runBlocking {
+            whenever(repository.fetchByFilter(anyString())).thenReturn(emptyList())
+
+            val tvSeriesObserver = spy<Observer<List<TVShow>>>()
+            viewModel.tvSeries.observeForever(tvSeriesObserver)
+
+            val emptyResultObserver = spy<Observer<Unit>>()
+            viewModel.emptyResult.observeForever(emptyResultObserver)
+
+            val loadingObserver = spy<Observer<Boolean>>()
+            viewModel.loading.observeForever(loadingObserver)
+
+            viewModel.fetchByFilter("")
 
             verify(tvSeriesObserver, never()).onChanged(emptyList())
             verify(emptyResultObserver, times(1)).onChanged(anyOrNull())

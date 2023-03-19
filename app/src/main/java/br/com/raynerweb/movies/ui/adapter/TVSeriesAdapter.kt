@@ -11,13 +11,8 @@ import br.com.raynerweb.movies.ui.model.TVShow
 import coil.load
 
 class TVSeriesAdapter(
-    var series: MutableList<TVShow>,
+    var series: List<TVShow>,
 ) : RecyclerView.Adapter<TVSeriesAdapter.TVSeriesViewHolder>() {
-
-    fun update(series: MutableList<TVShow>) {
-        this.series = series
-        notifyDataSetChanged()
-    }
 
     override fun getItemViewType(position: Int): Int {
         return position
@@ -52,6 +47,8 @@ class TVSeriesAdapter(
         TVSeriesViewHolder(binding.root) {
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
+            binding.ivPosterPath.load(tvShow.poster)
+            binding.ivBackdrop.load(tvShow.backdrop)
             binding.executePendingBindings()
         }
     }
