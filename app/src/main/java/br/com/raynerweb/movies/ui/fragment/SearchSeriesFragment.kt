@@ -17,8 +17,6 @@ class SearchSeriesFragment : Fragment() {
     lateinit var binding: FragmentSearchSeriesBinding
     private val viewModel: SearchSeriesViewModel by viewModels()
 
-    private lateinit var tvSeriesAdapter: TVSeriesAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,14 +38,14 @@ class SearchSeriesFragment : Fragment() {
     }
 
     private fun setupViews() {
-        tvSeriesAdapter = TVSeriesAdapter(mutableListOf())
-        binding.rvTvSeries.adapter = tvSeriesAdapter
+//        tvSeriesAdapter = TVSeriesAdapter(mutableListOf())
+//        binding.rvTvSeries.adapter = tvSeriesAdapter
     }
 
     private fun subscribe() {
 
         viewModel.tvSeries.observe(viewLifecycleOwner) {
-            tvSeriesAdapter.update(it.toMutableList())
+            binding.rvTvSeries.adapter = TVSeriesAdapter(it)
         }
 
     }
