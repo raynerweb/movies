@@ -40,6 +40,25 @@ class SearchSeriesViewModel @Inject constructor(
         } catch (e: HttpErrorException) {
             _loading.postValue(false)
         }
+    }
+
+    fun fetchByFilter(filter: String?) = viewModelScope.launch {
+        filter?.let {
+            try {
+                _loading.postValue(true)
+                val fetchPopular = searchTVSeriesRepository.fetchByFilter(filter)
+                if (fetchPopular.isEmpty()) {
+                    _emptyResult.call()
+                } else {
+                    _tvSeries.postValue(fetchPopular)
+                }
+                _loading.postValue(false)
+            } catch (e: HttpErrorException) {
+                _loading.postValue(false)
+            }
+        } ?: run {
+            fetchPopular()
+        }
 
     }
 

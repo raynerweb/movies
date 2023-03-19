@@ -33,4 +33,24 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun fetchByFilter(filter: String): List<TVShow> {
+        return withContext(context = Dispatchers.IO) {
+            val response = service.fetchByFilter(filter).execute()
+            if (response.isSuccessful) {
+                val results = response.body()?.results ?: emptyList()
+                return@withContext results.map { show ->
+                    TVShow(
+                        title = show.name,
+                        firstAirDate = show.first_air_date,
+                        overview = show.overview,
+                        poster = show.poster_path.urlImage(),
+                        backdrop = show.backdrop_path.urlImage()
+                    )
+                }
+            }
+            throw HttpErrorException()
+        }
+    }
+
+
 }

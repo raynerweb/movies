@@ -4,6 +4,7 @@ import br.com.raynerweb.movies.exception.HttpErrorException
 import br.com.raynerweb.movies.repository.impl.SearchTVSeriesRepositoryImpl
 import br.com.raynerweb.movies.repository.service.TVSeriesService
 import br.com.raynerweb.movies.repository.service.dto.response.ResponseTVShow
+import br.com.raynerweb.movies.repository.service.dto.response.ResponseTVShowByFilter
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import junit.framework.Assert.assertNotNull
@@ -35,8 +36,8 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
         assertNotNull(fetchPopular)
 
         fetchPopular.forEach {
-            assertNotNull(it.poster.startsWith("http"))
-            assertNotNull(it.backdrop.startsWith("http"))
+            assertNotNull(it.poster)
+            assertNotNull(it.backdrop)
         }
     }
 
@@ -55,6 +56,27 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
             runBlocking {
                 repository.fetchPopular()
             }
+        }
+    }
+
+    @Test
+    fun `Fetch TV Series by filter`() = runBlocking {
+        whenever(service.fetchByFilter("filter"))
+            .thenReturn(
+                Calls.response(
+                    gson.fromJson(
+                        readJson("/json/response_fetch_by_filter.json"),
+                        ResponseTVShowByFilter::class.java
+                    )
+                )
+            )
+
+        val filtered = repository.fetchByFilter("filter")
+        assertNotNull(filtered)
+
+        filtered.forEach {
+            assertNotNull(it.poster)
+            assertNotNull(it.backdrop)
         }
     }
 }

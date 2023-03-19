@@ -4,6 +4,8 @@ import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -18,6 +20,7 @@ class SearchSeriesFragment : Fragment() {
 
     lateinit var binding: FragmentSearchSeriesBinding
     private val viewModel: SearchSeriesViewModel by viewModels()
+    private var queryFilter = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,18 +71,28 @@ class SearchSeriesFragment : Fragment() {
         val searchView = searchItem.actionView as SearchView
         searchView.setSearchableInfo(searchManager.getSearchableInfo(requireActivity().componentName))
 
+        searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn).setOnClickListener {
+            viewModel.fetchPopular()
+            queryFilter = ""
+            searchView.setQuery("", false)
+        }
+
         searchView.apply {
             maxWidth = Integer.MAX_VALUE
             setOnQueryTextListener(object : SearchView.OnQueryTextListener {
                 override fun onQueryTextSubmit(query: String?): Boolean {
-                    // TODO to be implemented
+                    viewModel.fetchByFilter(queryFilter)
                     return true
                 }
 
                 override fun onQueryTextChange(newText: String?): Boolean {
+                    newText?.let {
+                        queryFilter = it
+                    }
                     return true
                 }
             })
+
         }
     }
 
