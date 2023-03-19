@@ -9,14 +9,22 @@
         android:id="@+id/searchSeriesFragment"
         android:name="br.com.raynerweb.movies.ui.fragment.SearchSeriesFragment"
         android:label="fragment_search_series"
-        tools:layout="@layout/fragment_search_series" >
+        tools:layout="@layout/fragment_search_series">
         <action
             android:id="@+id/action_searchSeriesFragment_to_viewSeriesFragment"
-            app:destination="@id/viewSeriesFragment" />
+            app:destination="@id/viewSeriesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/viewSeriesFragment"
         android:name="br.com.raynerweb.movies.ui.fragment.ViewSeriesFragment"
         android:label="fragment_view_series"
-        tools:layout="@layout/fragment_view_series" />
+        tools:layout="@layout/fragment_view_series">
+        <argument
+            android:name="tvShow"
+            app:argType="br.com.raynerweb.movies.ui.model.TVShow" />
+    </fragment>
 </navigation>

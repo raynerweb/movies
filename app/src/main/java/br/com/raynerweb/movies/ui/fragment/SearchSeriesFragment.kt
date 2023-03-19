@@ -7,11 +7,14 @@ import android.view.*
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.FragmentSearchSeriesBinding
 import br.com.raynerweb.movies.ui.adapter.TVSeriesAdapter
+import br.com.raynerweb.movies.ui.bundle.NavigationBundle.TVSHOW
 import br.com.raynerweb.movies.ui.viewmodel.SearchSeriesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,15 +47,16 @@ class SearchSeriesFragment : Fragment() {
 
     private fun setupViews() {
         setupToolbar()
-
-//        tvSeriesAdapter = TVSeriesAdapter(mutableListOf())
-//        binding.rvTvSeries.adapter = tvSeriesAdapter
     }
 
     private fun subscribe() {
 
         viewModel.tvSeries.observe(viewLifecycleOwner) {
-            binding.rvTvSeries.adapter = TVSeriesAdapter(it)
+            binding.rvTvSeries.adapter = TVSeriesAdapter(it) { tvShow ->
+                val bundle = bundleOf(TVSHOW to tvShow)
+                findNavController()
+                    .navigate(R.id.action_searchSeriesFragment_to_viewSeriesFragment, bundle)
+            }
         }
 
     }
@@ -71,11 +75,12 @@ class SearchSeriesFragment : Fragment() {
         val searchView = searchItem.actionView as SearchView
         searchView.setSearchableInfo(searchManager.getSearchableInfo(requireActivity().componentName))
 
-        searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn).setOnClickListener {
-            viewModel.fetchPopular()
-            queryFilter = ""
-            searchView.setQuery("", false)
-        }
+        searchView.findViewById<ImageView>(androidx.appcompat.R.id.search_close_btn)
+            .setOnClickListener {
+                viewModel.fetchPopular()
+                queryFilter = ""
+                searchView.setQuery("", false)
+            }
 
         searchView.apply {
             maxWidth = Integer.MAX_VALUE

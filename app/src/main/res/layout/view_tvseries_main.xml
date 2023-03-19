@@ -27,12 +27,12 @@
 
             <ImageView
                 android:id="@+id/iv_backdrop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:contentDescription="@string/backdrop"
-                android:foreground="@drawable/backdrop_foreground"
                 android:scaleType="centerCrop"
-                android:src="@drawable/backdrop"
+                android:foreground="@drawable/backdrop_foreground"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -46,7 +46,6 @@
                 android:layout_marginTop="96dp"
                 android:contentDescription="@string/poster"
                 android:scaleType="centerCrop"
-                android:src="@drawable/poster"
                 app:layout_constraintEnd_toEndOf="@id/center_guideline"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -94,11 +93,12 @@
                 tools:text="Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival." />
 
             <Button
+                android:id="@+id/bt_more"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:drawableEnd="@drawable/baseline_play_circle_filled_24"
-                android:text="More"
+                android:text="@string/more"
                 app:layout_constraintEnd_toEndOf="@+id/iv_posterPath"
                 app:layout_constraintStart_toStartOf="@+id/iv_posterPath"
                 app:layout_constraintTop_toBottomOf="@+id/iv_posterPath" />

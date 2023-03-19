@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import br.com.raynerweb.movies.databinding.ViewTvseriesDefaultBinding
 import br.com.raynerweb.movies.databinding.ViewTvseriesMainBinding
+import br.com.raynerweb.movies.ext.loadFrom
 import br.com.raynerweb.movies.ui.model.TVShow
 import coil.load
 
 class TVSeriesAdapter(
     var series: List<TVShow>,
+    val onClickListener: (TVShow) -> Unit
 ) : RecyclerView.Adapter<TVSeriesAdapter.TVSeriesViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
@@ -47,8 +49,11 @@ class TVSeriesAdapter(
         TVSeriesViewHolder(binding.root) {
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.load(tvShow.poster)
-            binding.ivBackdrop.load(tvShow.backdrop)
+            binding.ivPosterPath.loadFrom(tvShow.poster)
+            binding.ivBackdrop.loadFrom(tvShow.backdrop)
+            binding.btMore.setOnClickListener {
+                onClickListener.invoke(tvShow)
+            }
             binding.executePendingBindings()
         }
     }
@@ -58,7 +63,7 @@ class TVSeriesAdapter(
 
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.load(tvShow.poster)
+            binding.ivPosterPath.loadFrom(tvShow.poster)
             binding.executePendingBindings()
         }
     }
