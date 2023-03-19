@@ -47,6 +47,8 @@ class TVSeriesAdapter(
         TVSeriesViewHolder(binding.root) {
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
+            binding.ivPosterPath.load(tvShow.poster)
+            binding.ivBackdrop.load(tvShow.backdrop)
             binding.executePendingBindings()
         }
     }
