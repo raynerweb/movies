@@ -22,6 +22,7 @@ class TVSeriesServiceTest : BaseServiceTest() {
         val fetchPopular = service.fetchPopular().execute().body()
 
         assertNotNull(fetchPopular)
+        assertNotNull(fetchPopular?.results)
     }
 
     @Test
@@ -29,8 +30,42 @@ class TVSeriesServiceTest : BaseServiceTest() {
         val mockResponse = mockSuccessfulResponse("/json/response_fetch_by_filter.json")
         mockWebServer.enqueue(mockResponse)
 
-        val filtered = service.fetchByFilter("filter").execute().body()
+        val response = service.fetchByFilter("filter").execute().body()
 
-        assertNotNull(filtered)
+        assertNotNull(response)
+        assertNotNull(response?.results)
+    }
+
+    @Test
+    fun `Fetch TV Details`() {
+        val mockResponse = mockSuccessfulResponse("/json/response_seasons.json")
+        mockWebServer.enqueue(mockResponse)
+
+        val response = service.fetchSeasons(100088).execute().body()
+
+        assertNotNull(response)
+        assertNotNull(response?.seasons)
+    }
+
+    @Test
+    fun `Fetch Keywords`() {
+        val mockResponse = mockSuccessfulResponse("/json/response_keywords.json")
+        mockWebServer.enqueue(mockResponse)
+
+        val response = service.fetchKeywords(100088).execute().body()
+
+        assertNotNull(response)
+        assertNotNull(response?.results)
+    }
+
+    @Test
+    fun `Fetch Episodes`() {
+        val mockResponse = mockSuccessfulResponse("/json/response_episodes.json")
+        mockWebServer.enqueue(mockResponse)
+
+        val response = service.fetchEpisodes(100088, 1).execute().body()
+
+        assertNotNull(response)
+        assertNotNull(response?.episodes)
     }
 }
