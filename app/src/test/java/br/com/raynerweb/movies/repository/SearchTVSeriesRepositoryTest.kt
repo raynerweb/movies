@@ -166,6 +166,22 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
     }
 
     @Test
+    fun `Fetch Episodes Ordered by Episode number`() = runBlocking {
+        whenever(service.fetchEpisodes(anyInt(), anyInt()))
+            .thenReturn(
+                Calls.response(
+                    gson.fromJson(
+                        readJson("/json/response_episodes.json"),
+                        ResponseEpisode::class.java
+                    )
+                )
+            )
+
+        val episodes = repository.fetchEpisodes(10080, 1)
+        assertTrue(episodes.first().episodeNumber < episodes.last().episodeNumber)
+    }
+
+    @Test
     fun `Error when It try to fetch Episodes`() {
         whenever(service.fetchEpisodes(anyInt(), anyInt())).thenReturn(
             Calls.response(

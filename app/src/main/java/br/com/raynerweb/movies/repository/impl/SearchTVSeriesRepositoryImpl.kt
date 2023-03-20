@@ -85,7 +85,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                         picture = it.still_path.urlImage(),
                         airDate = it.air_date
                     )
-                }
+                }.sortedBy { it.episodeNumber }
             }
             throw HttpErrorException()
         }
