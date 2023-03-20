@@ -66,7 +66,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                         poster = it.poster_path.urlImage(),
                         seasonNumber = it.season_number
                     )
-                }
+                }.sortedBy { it.seasonNumber }
             }
             throw HttpErrorException()
         }

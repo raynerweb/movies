@@ -9,8 +9,7 @@ import com.nhaarman.mockitokotlin2.whenever
 import junit.framework.Assert.assertNotNull
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody.Companion.toResponseBody
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertThrows
+import org.junit.Assert.*
 import org.junit.Test
 import org.mockito.ArgumentMatchers.anyInt
 import org.mockito.ArgumentMatchers.anyString
@@ -114,6 +113,22 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
 
         val seasons = repository.fetchSeasons(10080)
         assertNotNull(seasons)
+    }
+
+    @Test
+    fun `Fetch TV Details with Seasons and Ordered By Season Number`() = runBlocking {
+        whenever(service.fetchSeasons(anyInt()))
+            .thenReturn(
+                Calls.response(
+                    gson.fromJson(
+                        readJson("/json/response_seasons.json"),
+                        ResponseSeasons::class.java
+                    )
+                )
+            )
+
+        val seasons = repository.fetchSeasons(10080)
+        assertTrue(seasons.first().seasonNumber < seasons.last().seasonNumber)
     }
 
     @Test
