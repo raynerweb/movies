@@ -7,7 +7,6 @@ data class ResponseSeasons(
 )
 
 data class Season(
-    val air_date: String,
     @SerializedName("episode_count")
     val episode_count: Int,
     val id: Int,

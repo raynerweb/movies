@@ -61,7 +61,6 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                 return@withContext results.map {
                     Season(
                         id = it.id,
-                        airDate = it.air_date,
                         episodeCount = it.episode_count,
                         name = it.name,
                         overview = it.overview,
