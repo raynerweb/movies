@@ -81,7 +81,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                 return@withContext results.map {
                     Episode(
                         id = it.id,
-                        episodeNumber = "# ${it.episode_number.toString()}",
+                        episodeNumber = it.episode_number,
                         name = it.name,
                         overview = it.overview,
                         picture = it.still_path.urlImage(),
