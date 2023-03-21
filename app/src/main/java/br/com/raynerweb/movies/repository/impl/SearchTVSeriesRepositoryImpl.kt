@@ -22,6 +22,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
             val results = response.body()?.results ?: emptyList()
             return@withContext results.map { show ->
                 TVShow(
+                    id = show.id,
                     title = show.name,
                     firstAirDate = show.firstAirDate,
                     overview = show.overview,
@@ -40,6 +41,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                 val results = response.body()?.results ?: emptyList()
                 return@withContext results.map { show ->
                     TVShow(
+                        id = show.id,
                         title = show.name,
                         firstAirDate = show.first_air_date,
                         overview = show.overview,
@@ -66,7 +68,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                         poster = it.poster_path.urlImage(),
                         seasonNumber = it.season_number
                     )
-                }
+                }.sortedBy { it.seasonNumber }
             }
             throw HttpErrorException()
         }
@@ -85,7 +87,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                         picture = it.still_path.urlImage(),
                         airDate = it.air_date
                     )
-                }
+                }.sortedBy { it.episodeNumber }
             }
             throw HttpErrorException()
         }

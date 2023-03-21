@@ -9,8 +9,7 @@ import com.nhaarman.mockitokotlin2.whenever
 import junit.framework.Assert.assertNotNull
 import kotlinx.coroutines.runBlocking
 import okhttp3.ResponseBody.Companion.toResponseBody
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertThrows
+import org.junit.Assert.*
 import org.junit.Test
 import org.mockito.ArgumentMatchers.anyInt
 import org.mockito.ArgumentMatchers.anyString
@@ -117,6 +116,22 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
     }
 
     @Test
+    fun `Fetch TV Details with Seasons and Ordered By Season Number`() = runBlocking {
+        whenever(service.fetchSeasons(anyInt()))
+            .thenReturn(
+                Calls.response(
+                    gson.fromJson(
+                        readJson("/json/response_seasons.json"),
+                        ResponseSeasons::class.java
+                    )
+                )
+            )
+
+        val seasons = repository.fetchSeasons(10080)
+        assertTrue(seasons.first().seasonNumber < seasons.last().seasonNumber)
+    }
+
+    @Test
     fun `Error when It try to fetch TV Details with Seasons`() {
         whenever(service.fetchSeasons(anyInt())).thenReturn(
             Calls.response(
@@ -148,6 +163,22 @@ class SearchTVSeriesRepositoryTest : BaseRepositoryTest() {
 
         val episodes = repository.fetchEpisodes(10080, 1)
         assertNotNull(episodes)
+    }
+
+    @Test
+    fun `Fetch Episodes Ordered by Episode number`() = runBlocking {
+        whenever(service.fetchEpisodes(anyInt(), anyInt()))
+            .thenReturn(
+                Calls.response(
+                    gson.fromJson(
+                        readJson("/json/response_episodes.json"),
+                        ResponseEpisode::class.java
+                    )
+                )
+            )
+
+        val episodes = repository.fetchEpisodes(10080, 1)
+        assertTrue(episodes.first().episodeNumber < episodes.last().episodeNumber)
     }
 
     @Test
