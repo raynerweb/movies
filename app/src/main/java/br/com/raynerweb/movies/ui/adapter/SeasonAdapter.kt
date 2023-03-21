@@ -34,6 +34,9 @@ class SeasonAdapter(
         fun bind(season: Season) {
             binding.season = season
             binding.ivPoster.loadRoundedFrom(season.poster)
+            binding.root.setOnClickListener {
+                onClickListener.invoke(season)
+            }
             binding.executePendingBindings()
         }
     }

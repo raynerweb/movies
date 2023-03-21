@@ -7,4 +7,6 @@ data class Episode(
     val overview: String,
     val picture: String, //still_path
     val airDate: String,
-)
+) {
+    fun episodeNumberFormatted() = "# $episodeNumber"
+}

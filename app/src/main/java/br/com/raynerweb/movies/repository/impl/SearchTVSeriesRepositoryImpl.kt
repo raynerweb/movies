@@ -60,8 +60,8 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                 val results = response.body()?.seasons ?: emptyList()
                 return@withContext results.map {
                     Season(
+                        tvShowId = tvShowId,
                         id = it.id,
-                        airDate = it.air_date,
                         episodeCount = it.episode_count,
                         name = it.name,
                         overview = it.overview,

@@ -4,14 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.FragmentViewSeriesBinding
 import br.com.raynerweb.movies.ext.loadFrom
 import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.adapter.SeasonAdapter
+import br.com.raynerweb.movies.ui.bundle.NavigationBundle.SEASON
 import br.com.raynerweb.movies.ui.bundle.NavigationBundle.TVSHOW
 import br.com.raynerweb.movies.ui.model.TVShow
 import br.com.raynerweb.movies.ui.viewmodel.ViewSeriesViewModel
@@ -62,8 +66,10 @@ class ViewSeriesFragment : Fragment() {
 
     private fun subscribe() {
         viewModel.seasons.observe(viewLifecycleOwner) {
-            val adapter = SeasonAdapter(it) {
-
+            val adapter = SeasonAdapter(it) { season ->
+                val bundle = bundleOf(SEASON to season)
+                findNavController()
+                    .navigate(R.id.action_viewSeriesFragment_to_episodesFragment, bundle)
             }
             binding.rvPoster.adapter = adapter
         }
