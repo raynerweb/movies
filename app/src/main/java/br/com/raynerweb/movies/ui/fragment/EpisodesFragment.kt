@@ -42,9 +42,9 @@ class EpisodesFragment : Fragment() {
     }
 
     private fun setupViews() {
-//        binding.rvEpisodes.addItemDecoration(
-//            LinearMarginDecoration.create(24, RecyclerView.HORIZONTAL)
-//        )
+        binding.rvEpisodes.addItemDecoration(
+            LinearMarginDecoration.create(24, RecyclerView.VERTICAL)
+        )
     }
 
     private fun subscribe() {

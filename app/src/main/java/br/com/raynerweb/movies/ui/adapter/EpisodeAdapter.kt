@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.raynerweb.movies.databinding.ViewEpisodeBinding
 import br.com.raynerweb.movies.ext.loadFrom
+import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.model.Episode
 
 class EpisodeAdapter(
@@ -12,7 +13,13 @@ class EpisodeAdapter(
 ) : RecyclerView.Adapter<EpisodeAdapter.EpisodeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        EpisodeViewHolder(ViewEpisodeBinding.inflate(LayoutInflater.from(parent.context)))
+        EpisodeViewHolder(
+            ViewEpisodeBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
 
     override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
         holder.bind(episodes[position])
@@ -25,8 +32,8 @@ class EpisodeAdapter(
 
         fun bind(episode: Episode) {
             binding.episode = episode
-            binding.ivPicture.loadFrom(episode.picture)
             binding.executePendingBindings()
+            binding.ivPicture.loadRoundedFrom(episode.picture)
         }
     }
 }
