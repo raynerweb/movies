@@ -14,11 +14,13 @@ import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.FragmentViewSeriesBinding
 import br.com.raynerweb.movies.ext.loadFrom
 import br.com.raynerweb.movies.ext.loadRoundedFrom
+import br.com.raynerweb.movies.ui.adapter.KeywordAdapter
 import br.com.raynerweb.movies.ui.adapter.SeasonAdapter
 import br.com.raynerweb.movies.ui.bundle.NavigationBundle.SEASON
 import br.com.raynerweb.movies.ui.bundle.NavigationBundle.TVSHOW
 import br.com.raynerweb.movies.ui.model.TVShow
 import br.com.raynerweb.movies.ui.viewmodel.ViewSeriesViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rubensousa.decorator.LinearMarginDecoration
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -26,6 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ViewSeriesFragment : Fragment() {
 
+    private var tvShowId: Int = 0
     private lateinit var binding: FragmentViewSeriesBinding
     private val viewModel: ViewSeriesViewModel by viewModels()
 
@@ -46,6 +49,8 @@ class ViewSeriesFragment : Fragment() {
             subscribe()
             setupViews()
 
+            tvShowId = tvShow.id
+
             binding.tvShow = tvShow
             binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
             binding.ivBackdrop.loadFrom(tvShow.backdrop)
@@ -62,6 +67,10 @@ class ViewSeriesFragment : Fragment() {
         binding.rvPoster.addItemDecoration(
             LinearMarginDecoration.create(24, RecyclerView.HORIZONTAL)
         )
+
+        binding.btMore.setOnClickListener {
+            viewModel.fetchKeywords(tvShowId)
+        }
     }
 
     private fun subscribe() {
@@ -73,6 +82,23 @@ class ViewSeriesFragment : Fragment() {
             }
             binding.rvPoster.adapter = adapter
         }
+
+        viewModel.keywords.observe(viewLifecycleOwner) { keywords ->
+            val inflater = LayoutInflater.from(requireContext())
+            val view = inflater.inflate(R.layout.view_dialog_keywords, null)
+            view.findViewById<RecyclerView>(R.id.rv_keywords).let { recyclerView ->
+                recyclerView.layoutManager =
+                    LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false)
+                recyclerView.adapter = KeywordAdapter(keywords)
+            }
+            val dialog = BottomSheetDialog(requireContext())
+            dialog.setContentView(view)
+            dialog.show()
+            dialog.setOnDismissListener {
+
+            }
+        }
+
     }
 
 }

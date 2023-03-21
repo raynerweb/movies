@@ -5,7 +5,7 @@ data class ResponseEpisode(
 )
 
 data class Episode(
-    val air_date: String,
+    val air_date: String?,
     val episode_number: Int,
     val id: Int,
     val name: String,

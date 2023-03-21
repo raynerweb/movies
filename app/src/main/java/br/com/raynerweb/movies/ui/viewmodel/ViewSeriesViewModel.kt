@@ -26,8 +26,10 @@ class ViewSeriesViewModel @Inject constructor(
     private val _seasons = MutableLiveData<List<Season>>()
     val seasons: LiveData<List<Season>> get() = _seasons
 
+    private val _keywords = MutableLiveData<List<String>>()
+    val keywords: LiveData<List<String>> get() = _keywords
+
     fun fetchSeasons(tvShowId: Int) = viewModelScope.launch {
-        searchTVSeriesRepository.fetchSeasons(tvShowId)
         try {
             _loading.postValue(true)
             val fetchPopular = searchTVSeriesRepository.fetchSeasons(tvShowId)
@@ -35,6 +37,21 @@ class ViewSeriesViewModel @Inject constructor(
                 _emptyResult.call()
             } else {
                 _seasons.postValue(fetchPopular)
+            }
+            _loading.postValue(false)
+        } catch (e: HttpErrorException) {
+            _loading.postValue(false)
+        }
+    }
+
+    fun fetchKeywords(tvShowId: Int) = viewModelScope.launch {
+        try {
+            _loading.postValue(true)
+            val keywords = searchTVSeriesRepository.fetchKeywords(tvShowId)
+            if (keywords.isEmpty()) {
+                _emptyResult.call()
+            } else {
+                _keywords.postValue(keywords)
             }
             _loading.postValue(false)
         } catch (e: HttpErrorException) {

@@ -85,7 +85,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                         name = it.name,
                         overview = it.overview,
                         picture = it.still_path.urlImage(),
-                        airDate = it.air_date
+                        airDate = it.air_date ?: ""
                     )
                 }.sortedBy { it.episodeNumber }
             }
