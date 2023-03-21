@@ -26,5 +26,13 @@
         <argument
             android:name="tvShow"
             app:argType="br.com.raynerweb.movies.ui.model.TVShow" />
+        <action
+            android:id="@+id/action_viewSeriesFragment_to_episodesFragment"
+            app:destination="@id/episodesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/episodesFragment"
+        android:name="br.com.raynerweb.movies.ui.fragment.EpisodesFragment"
+        android:label="EpisodesFragment"
+        tools:layout="@layout/fragment_episodes" />
 </navigation>

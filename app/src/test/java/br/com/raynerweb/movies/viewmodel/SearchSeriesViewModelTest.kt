@@ -129,6 +129,6 @@ class SearchSeriesViewModelTest {
         }
 
     private fun list() =
-        listOf(TVShow("", "", "", "", ""))
+        listOf(TVShow(1, "", "", "", "", ""))
 
 }
