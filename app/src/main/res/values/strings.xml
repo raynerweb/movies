@@ -10,4 +10,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keywords">Keywords</string>
     <string name="no_seasons_found">No seasons found</string>
+    <string name="no_episodes_found">No episodes found</string>
 </resources>
