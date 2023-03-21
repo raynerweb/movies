@@ -22,6 +22,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
             val results = response.body()?.results ?: emptyList()
             return@withContext results.map { show ->
                 TVShow(
+                    id = show.id,
                     title = show.name,
                     firstAirDate = show.firstAirDate,
                     overview = show.overview,
@@ -40,6 +41,7 @@ class SearchTVSeriesRepositoryImpl @Inject constructor(
                 val results = response.body()?.results ?: emptyList()
                 return@withContext results.map { show ->
                     TVShow(
+                        id = show.id,
                         title = show.name,
                         firstAirDate = show.first_air_date,
                         overview = show.overview,

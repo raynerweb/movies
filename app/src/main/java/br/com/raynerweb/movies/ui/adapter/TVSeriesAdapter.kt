@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import br.com.raynerweb.movies.databinding.ViewTvseriesDefaultBinding
 import br.com.raynerweb.movies.databinding.ViewTvseriesMainBinding
 import br.com.raynerweb.movies.ext.loadFrom
+import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.model.TVShow
 import coil.load
 
@@ -49,7 +50,7 @@ class TVSeriesAdapter(
         TVSeriesViewHolder(binding.root) {
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.loadFrom(tvShow.poster)
+            binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
             binding.ivBackdrop.loadFrom(tvShow.backdrop)
             binding.btMore.setOnClickListener {
                 onClickListener.invoke(tvShow)
@@ -63,7 +64,10 @@ class TVSeriesAdapter(
 
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.loadFrom(tvShow.poster)
+            binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
+            binding.root.setOnClickListener {
+                onClickListener.invoke(tvShow)
+            }
             binding.executePendingBindings()
         }
     }
