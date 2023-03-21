@@ -74,6 +74,15 @@ class ViewSeriesFragment : Fragment() {
     }
 
     private fun subscribe() {
+
+        viewModel.loading.observe(viewLifecycleOwner) {
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+        }
+
+        viewModel.emptyResult.observe(viewLifecycleOwner) {
+            binding.tvEmptyResult.visibility = View.VISIBLE
+        }
+
         viewModel.seasons.observe(viewLifecycleOwner) {
             val adapter = SeasonAdapter(it) { season ->
                 val bundle = bundleOf(SEASON to season)
