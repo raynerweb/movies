@@ -1,12 +1,14 @@
 package br.com.raynerweb.movies.ui.adapter
 
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.ViewEpisodeBinding
-import br.com.raynerweb.movies.ext.loadFrom
-import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.model.Episode
+import coil.load
+import coil.transform.RoundedCornersTransformation
 
 class EpisodeAdapter(
     var episodes: List<Episode>
@@ -32,8 +34,14 @@ class EpisodeAdapter(
 
         fun bind(episode: Episode) {
             binding.episode = episode
+            binding.ivPicture.load(
+                if (TextUtils.isEmpty(episode.picture)) R.drawable.episode else episode.picture
+            ) {
+                placeholder(R.drawable.episode)
+                crossfade(true)
+                transformations(RoundedCornersTransformation(10f))
+            }
             binding.executePendingBindings()
-            binding.ivPicture.loadRoundedFrom(episode.picture)
         }
     }
 }

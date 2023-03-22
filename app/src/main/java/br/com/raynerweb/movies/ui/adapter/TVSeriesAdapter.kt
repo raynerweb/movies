@@ -1,16 +1,17 @@
 package br.com.raynerweb.movies.ui.adapter
 
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.ViewTvseriesDefaultBinding
 import br.com.raynerweb.movies.databinding.ViewTvseriesMainBinding
-import br.com.raynerweb.movies.ext.loadFrom
-import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.model.TVShow
 import coil.load
+import coil.transform.RoundedCornersTransformation
 
 class TVSeriesAdapter(
     var series: List<TVShow>,
@@ -50,8 +51,19 @@ class TVSeriesAdapter(
         TVSeriesViewHolder(binding.root) {
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
-            binding.ivBackdrop.loadFrom(tvShow.backdrop)
+            binding.ivPosterPath.load(
+                if (TextUtils.isEmpty(tvShow.poster)) R.drawable.poster else tvShow.poster
+            ) {
+                placeholder(R.drawable.poster)
+                crossfade(true)
+                transformations(RoundedCornersTransformation(10f))
+            }
+            binding.ivBackdrop.load(
+                if (TextUtils.isEmpty(tvShow.backdrop)) R.drawable.backdrop else tvShow.backdrop
+            ) {
+                placeholder(R.drawable.backdrop)
+                crossfade(true)
+            }
             binding.btMore.setOnClickListener {
                 onClickListener.invoke(tvShow)
             }
@@ -64,7 +76,13 @@ class TVSeriesAdapter(
 
         override fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
-            binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
+            binding.ivPosterPath.load(
+                if (TextUtils.isEmpty(tvShow.poster)) R.drawable.poster else tvShow.poster
+            ) {
+                placeholder(R.drawable.poster)
+                crossfade(true)
+                transformations(RoundedCornersTransformation(10f))
+            }
             binding.root.setOnClickListener {
                 onClickListener.invoke(tvShow)
             }

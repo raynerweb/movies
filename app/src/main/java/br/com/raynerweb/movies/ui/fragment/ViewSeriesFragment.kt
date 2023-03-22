@@ -1,6 +1,7 @@
 package br.com.raynerweb.movies.ui.fragment
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,14 +14,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.FragmentViewSeriesBinding
-import br.com.raynerweb.movies.ext.loadFrom
-import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.adapter.KeywordAdapter
 import br.com.raynerweb.movies.ui.adapter.SeasonAdapter
 import br.com.raynerweb.movies.ui.bundle.NavigationBundle.SEASON
 import br.com.raynerweb.movies.ui.bundle.NavigationBundle.TVSHOW
 import br.com.raynerweb.movies.ui.model.TVShow
 import br.com.raynerweb.movies.ui.viewmodel.ViewSeriesViewModel
+import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.rubensousa.decorator.LinearMarginDecoration
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,8 +54,19 @@ class ViewSeriesFragment : Fragment() {
             tvShowId = tvShow.id
 
             binding.tvShow = tvShow
-            binding.ivPosterPath.loadRoundedFrom(tvShow.poster)
-            binding.ivBackdrop.loadFrom(tvShow.backdrop)
+            binding.ivPosterPath.load(
+                if (TextUtils.isEmpty(tvShow.poster)) R.drawable.poster else tvShow.poster
+            ) {
+                placeholder(R.drawable.poster)
+                crossfade(true)
+                transformations(RoundedCornersTransformation(10f))
+            }
+            binding.ivBackdrop.load(
+                if (TextUtils.isEmpty(tvShow.backdrop)) R.drawable.backdrop else tvShow.backdrop
+            ) {
+                placeholder(R.drawable.backdrop)
+                crossfade(true)
+            }
             binding.executePendingBindings()
 
             viewModel.fetchSeasons(tvShow.id)
@@ -112,7 +124,11 @@ class ViewSeriesFragment : Fragment() {
         }
 
         viewModel.emptyKeywords.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), getString(R.string.no_keywords_found), Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                requireContext(),
+                getString(R.string.no_keywords_found),
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
     }
