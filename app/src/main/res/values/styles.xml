@@ -2,11 +2,18 @@
 <resources>
 
     <style name="PrimaryButtonStyle" parent="Widget.MaterialComponents.Button">
-<!--        <item name="cornerRadius">8dp</item>-->
         <item name="android:paddingTop">8dp</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="android:layout_marginHorizontal">8dp</item>
         <item name="backgroundTint">?attr/colorPrimary</item>
+    </style>
+
+    <style name="PrimaryButtonOutlineStyle" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:layout_marginHorizontal">8dp</item>
+        <item name="strokeColor">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
     <style name="Splash" parent="Theme.MaterialComponents.NoActionBar">
