@@ -2,7 +2,7 @@
 
 A challenge proposed by **Void Software**
 
-<img src="screen/output.gif" />
+<img src="screen/output.gif" width="250px" />
 
 | Screen 1                     | Screen 2                     | Screen 3                     | Screen 4                     | Screen 5                     |
 |------------------------------|------------------------------|------------------------------|------------------------------|------------------------------|
@@ -35,6 +35,6 @@ The TV Show details screen need to display:
 
 ## Extra features
 
-Splash screen
+🖼 Splash screen
 
-🍻Light Theme / Dark Theme
+🍻 Light Theme / Dark Theme
