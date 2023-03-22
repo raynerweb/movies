@@ -2,12 +2,9 @@
 
 A challenge proposed by **Void Software**
 
-<img src="screen/output.gif" width="350" height="584">
-<img src="screen/001.png" width="350" height="584">
-<img src="screen/002.png" width="350" height="584">
-<img src="screen/003.png" width="350" height="584">
-<img src="screen/004.png" width="350" height="584">
-<img src="screen/005.png" width="350" height="584">
+| Gif                             | Screen 1                     | Screen 2                     | Screen 3                     | Screen 4                     | Screen 5                     |
+|---------------------------------|------------------------------|------------------------------|------------------------------|------------------------------|------------------------------|
+| <img src="screen/output.gif" /> | <img src="screen/001.png" /> | <img src="screen/002.png" /> | <img src="screen/003.png" /> | <img src="screen/004.png" /> | <img src="screen/005.png" /> |
 
 This challenge is testing:
 
