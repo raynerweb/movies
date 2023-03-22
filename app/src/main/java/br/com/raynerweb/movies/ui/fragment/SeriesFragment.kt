@@ -74,6 +74,7 @@ class SeriesFragment : Fragment() {
 
     fun clearFilter(view: View) {
         viewModel.clearFilter()
+        bottomSheetDialog.dismiss()
     }
 
     fun saerch(view: View) {

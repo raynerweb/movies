@@ -47,6 +47,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@android:color/transparent"
                 android:inputType="textAutoComplete"
+                android:nextFocusDown="@id/bt_search"
                 android:text="@={viewModel.queryFilter}" />
 
         </com.google.android.material.textfield.TextInputLayout>
