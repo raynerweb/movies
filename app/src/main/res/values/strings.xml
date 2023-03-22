@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Movies</string>
+    <string name="app_name">Series</string>
+    <string name="back">Back</string>
+    <string name="backdrop">backdrop</string>
+    <string name="poster">poster</string>
+    <string name="watch_now">Watch Now</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
+    <string name="keywords">Keywords</string>
+    <string name="no_keywords_found">No keywords found</string>
+    <string name="no_tvshow_found">No TV show found</string>
+    <string name="no_seasons_found">No seasons found</string>
+    <string name="no_episodes_found">No episodes found</string>
+    <string name="see_more">See more</string>
+    <string name="tv_show_name">TV Show name</string>
+    <string name="find_your_favorite_tv_show">Find your favorite TV Show</string>
+    <string name="clear">Clear</string>
 </resources>

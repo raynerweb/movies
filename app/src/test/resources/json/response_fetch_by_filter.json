@@ -1,0 +1,424 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/uDgy6hyPd82kOHh6I95FLtLnj6p.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 100088,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last of Us",
+      "overview": "Situado duas décadas após a implosão de nossa sociedade, o drama seguirá Joel, um sobrevivente difícil, que é contratado para contrabandear uma garota de 14 anos chamada Ellie para fora de uma zona de quarentena opressiva. O que começa como um pequeno trabalho logo se torna uma jornada brutal e de partir o coração, já que os dois precisam atravessar os Estados Unidos e dependem um do outro para sobreviver.",
+      "popularity": 2996.872,
+      "poster_path": "/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+      "first_air_date": "2023-01-15",
+      "name": "The Last of Us",
+      "vote_average": 8.788,
+      "vote_count": 2758
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uCqXSfHymdbDMsFx8t0u0OPSuve.jpg",
+      "genre_ids": [
+        10759,
+        18,
+        10768
+      ],
+      "id": 63333,
+      "origin_country": [
+        "GB"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Kingdom",
+      "overview": "Enquanto Alfredo, o Grande, defende seu reino de invasões nórdicas, Uhtred - um saxão criado por vikings - planeja reivindicar o que é seu por direito.",
+      "popularity": 271.716,
+      "poster_path": "/fMNJjzZUdc8pBVIQ85olSNaBKix.jpg",
+      "first_air_date": "2015-10-10",
+      "name": "The Last Kingdom",
+      "vote_average": 8.279,
+      "vote_count": 1373
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lZkgHcZnTZE5Lp7lOOxltN12YiL.jpg",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "id": 102927,
+      "origin_country": [
+        "CN"
+      ],
+      "original_language": "zh",
+      "original_name": "最后的召唤师",
+      "overview": "Tudo no mundo possui um espírito, e os seres capazes de invocar esses espíritos são chamados de Invocadores. Divididos entre Guardiães e Destruidores, estes Invocadores travaram inúmeras guerras pela origem dos espíritos de todas as coisas - a deusa Pandora. Para evitar mais derramamento de sangue, ambos os lados da guerra decidem selar Pandora e acabar com a era de ouro dos Invocadores. Muitos séculos depois, Ah Jie invoca sem querer a deusa Dora e se vê jogado no mundo dos Invocadores, e terá de se unir aos Guardiães para colocar um fim neste conflito de uma vez por todas.",
+      "popularity": 32.028,
+      "poster_path": "/r7Ked7mAnvuuRPuehta2L4eHUfO.jpg",
+      "first_air_date": "2022-04-26",
+      "name": "The Last Summoner",
+      "vote_average": 6.0,
+      "vote_count": 4
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6C5m9nzCTB0ijS9PjYus0eTYpct.jpg",
+      "genre_ids": [
+        18,
+        10759,
+        9648
+      ],
+      "id": 84107,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "original_name": "황후의 품격",
+      "overview": "Esta série é sobre uma atriz de musicais que se casou com o Imperador e encontra o amor e a felicidade lutando contra o poder absoluto da Família Real.",
+      "popularity": 22.229,
+      "poster_path": "/kWJw89ce4gxGREKxaFSiQmETWQN.jpg",
+      "first_air_date": "2018-11-21",
+      "name": "The Last Empress",
+      "vote_average": 7.231,
+      "vote_count": 13
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/nLKYAJCEi6OQVji1HJIxSQ74H9s.jpg",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "id": 246,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Avatar: The Last Airbender",
+      "overview": "Aang é um menino de 12 anos que descobre ser o Avatar, mestre responsável por garantir o equilíbrio entre os quatro elementos e suas respectivas nações, mantendo o planeta em paz.",
+      "popularity": 59.088,
+      "poster_path": "/8RFAXPLs3qg5YVYbv5ME46syBKy.jpg",
+      "first_air_date": "2005-02-21",
+      "name": "Avatar: A Lenda de Aang",
+      "vote_average": 8.687,
+      "vote_count": 3187
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/r0vlzWX5OzC9bVSZru0PVk0QzXn.jpg",
+      "genre_ids": [
+        10759,
+        18,
+        10765
+      ],
+      "id": 60802,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Ship",
+      "overview": "Um vírus mortal eliminou mais da metade da população do planeta. O capitão Tom Chandler e a tripulação do contratorpedeiro USS Nathan James deverão ficar a salvo porque terão em suas mãos o destino da Humanidade.",
+      "popularity": 60.538,
+      "poster_path": "/cG0knRS3OZIhxsQDkYZPYJHhfCP.jpg",
+      "first_air_date": "2014-06-22",
+      "name": "O Último Navio",
+      "vote_average": 6.7,
+      "vote_count": 797
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7jNQxViLpsckc33c17suNxSrBI2.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 96256,
+      "origin_country": [
+        "UA"
+      ],
+      "original_language": "uk",
+      "original_name": "Перші ластівки",
+      "overview": "A série gira em torno da vida de adolescentes ucranianos em uma turma do ensino médio. Os adolescentes lutam contra o bullying, incluindo o desafio das baleias azuis, falta de apoio dos pais, comportamento suicida, crises de identidade LGBT, pais alcoólatras e problemas de fala. Em umas das principais tramas do programa, os personagens são perseguidos na internet por uma pessoa anonima que finge ser amiga deles.",
+      "popularity": 10.296,
+      "poster_path": "/r0m0p4bcBMNDSLP8Pm9oyD1bciF.jpg",
+      "first_air_date": "2019-11-19",
+      "name": "Pershi Lastivky (The first swallows)",
+      "vote_average": 0.0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oGH76pXudnsbtLlQ1HZ013y5kLk.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 216907,
+      "origin_country": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "original_name": "슈퍼주니어: 더 라스트 맨 스탠딩",
+      "overview": "Em 6 de novembro de 2005, um grupo de meninos fez sua estreia no cenário musical. Após deixar sua marca na Ásia, o Super Junior se tornou uma boy band conhecida mundialmente. A série mostra os bastidores da banda e seus integrantes, dando ao público uma nova perspectiva sobre a indústria do k-pop.",
+      "popularity": 4.516,
+      "poster_path": "/AeGqn53zRgZbjf7Kr4OxGw4sLRj.jpg",
+      "first_air_date": "2023-01-18",
+      "name": "Super Junior: The Last Man Standing",
+      "vote_average": 10.0,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kSU8VKimvPY62HTv0kdBNE7fR3t.jpg",
+      "genre_ids": [
+        18,
+        9648
+      ],
+      "id": 99632,
+      "origin_country": [
+        "CN"
+      ],
+      "original_language": "zh",
+      "original_name": "两世欢",
+      "overview": "No primeiro ano de Liang viveu Yuan Qingli, filha de um general. Enquanto está no caminho de um convento para refletir e meditar, ela é abduzida e inconsciente. Após seu resgate, Yuan Qingli acorda dias depois sem suas memórias e com uma nova personalidade. Para escapar de seu próprio casamento, ela se veste como homem e se torna um policial do condado de Qinhe. Filho adotivo de Zhao Wang JingCi é emboscado enquanto acompanha seu amigo de infância Ma Fengmian para se casar. Depois de ser resgatado por Liang Wang, Jing Ci assume a identidade de um funcionário da Liang e descobre pistas de uma conspiração dentro dos tribunais do palácio. Para prosseguir sua investigação, Jing Ci vai a Qinghe a negócios e assume uma posição como funcionário do condado. O doentio Jing Ci e o policial novato Yuan Qingli dão as mãos para desvendar camadas e mais camadas de corrupção de longa data. Em uma busca pela verdade, Yuan Qingli também aprende sua verdadeira identidade.",
+      "popularity": 14.214,
+      "poster_path": "/mLKqwy5MctqLyQAQHUgabZAMjU6.jpg",
+      "first_air_date": "2020-02-20",
+      "name": "The Love Lasts Two Minds",
+      "vote_average": 7.0,
+      "vote_count": 2
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ylrGMHSwp7F3LYpnxGYJVpGVqmg.jpg",
+      "genre_ids": [
+        10767
+      ],
+      "id": 63706,
+      "origin_country": [
+        "GB"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Leg",
+      "overview": "Adam Hills and co-hosts Josh Widdicombe and Alex Brooker provide some offbeat commentary on the significant moments of the past seven days.",
+      "popularity": 32.135,
+      "poster_path": "/u2MNENZmIg1ktAPiqmjrNqm0g4c.jpg",
+      "first_air_date": "2013-01-25",
+      "name": "The Last Leg",
+      "vote_average": 5.588,
+      "vote_count": 17
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/88jpREzaBTjadaJ71JbihhL9A1k.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 4250,
+      "origin_country": [
+        "GB"
+      ],
+      "original_language": "en",
+      "original_name": "Last of the Summer Wine",
+      "overview": "Unencumbered by wives, jobs or any other responsibilities, three senior citizens who've never really grown up explore their world in the Yorkshire Dales. They spend their days speculating about their fellow townsfolk and thinking up adventures not usually favored by the elderly.  Last of the Summer Wine premiered as an episode of Comedy Playhouse in 1973. The show ran for 295 episodes until 2010. It is the longest running comedy Britain has produced and the longest running sitcom in the world.",
+      "popularity": 32.744,
+      "poster_path": "/vjI4WdHda9ckCo5YIYVhc8rl6SR.jpg",
+      "first_air_date": "1973-01-04",
+      "name": "Last of the Summer Wine",
+      "vote_average": 7.069,
+      "vote_count": 29
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/q8FS5ZtkV98MYbUR1wJRyvVJGav.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 61888,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Man on Earth",
+      "overview": "Phil Miller (Will Forte) era apenas um cara normal que amava sua família e odiava seu emprego no banco - agora ele parece ser a última alma viva do planeta e a última esperança da humanidade.  O ano é 2020 e, depois que um vírus letal acabou com a vida humana em todo o planeta, apenas Phil sobreviveu. Usando seu carro, ele rodou o país em busca de outros sobreviventes, tendo viajado para todas as cidades dos Estados Unidos, México e Canadá, sem encontrar ninguém.  Enquanto retorna para sua cidade natal em Tucson, Phil chega à conclusão de que é, com quase toda a certeza, o último homem vivo sobre a face da Terra.",
+      "popularity": 39.504,
+      "poster_path": "/h7Deh3JXZVuhUf5qi6ZiZf6MjQF.jpg",
+      "first_air_date": "2015-03-01",
+      "name": "O Último Cara da Terra",
+      "vote_average": 6.873,
+      "vote_count": 716
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/dETrKWWqG58dC0B6o1yNEuODwAW.jpg",
+      "genre_ids": [
+        10765,
+        18
+      ],
+      "id": 86550,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Y: The Last Man",
+      "overview": "Passa-se num mundo pós-apocalíptico, em que um evento cataclísmico dizima todos os mamíferos com cromossomo Y, menos um homem cisgénero e o seu macaco de estimação. A série acompanha os sobreviventes neste mundo novo, enquanto se debatem com a tentativa de restaurar o que foi perdido e com a oportunidade de criar algo melhor.",
+      "popularity": 27.815,
+      "poster_path": "/kK9zt43pdehEybPoNXPe6hctkdq.jpg",
+      "first_air_date": "2021-09-13",
+      "name": "Y: O Último Homem",
+      "vote_average": 7.099,
+      "vote_count": 202
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kY0h95L73t7a6ev6Rv0aHSCtN7y.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 79525,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Dance",
+      "overview": "Esse relato definitivo sobre a carreira de Michael Jordan e o time do Chicago Bulls nos anos 90 traz imagens inéditas da temporada de 1997–1998.",
+      "popularity": 25.328,
+      "poster_path": "/3a50zkySihNjgRfhLl2qIdhie7p.jpg",
+      "first_air_date": "2020-04-19",
+      "name": "Arremesso Final",
+      "vote_average": 8.207,
+      "vote_count": 1075
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5Ig66JHWuqotsTwtU2P8zg3TJhv.jpg",
+      "genre_ids": [
+        99,
+        18
+      ],
+      "id": 103026,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Undertaker: The Last Ride",
+      "overview": "The anticipated WWE Network docuseries will look back on The Undertaker’s storied WWE career and place a focus on the ongoing challenges the wrestling legend appears to have with a career beginning to near it's end.",
+      "popularity": 7.486,
+      "poster_path": "/ckKQrIUD9kKAtuTKEkybcajScyA.jpg",
+      "first_air_date": "2020-05-10",
+      "name": "Undertaker: The Last Ride",
+      "vote_average": 7.363,
+      "vote_count": 311
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lUKLz31z3desr58inCZHY5zEcv9.jpg",
+      "genre_ids": [
+        35
+      ],
+      "id": 77485,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last O.G.",
+      "overview": "O ex-condenado Tray fica chocado quando vê o quanto o mundo mudou após ser libertado da prisão por bom comportamento, local que que passou os últimos 15 anos.",
+      "popularity": 9.34,
+      "poster_path": "/4jJ4TfnhA6ph3NWic50bsF9Rwer.jpg",
+      "first_air_date": "2018-04-03",
+      "name": "The Last O.G.",
+      "vote_average": 6.9,
+      "vote_count": 37
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w1NW3txPHnERyEYJp2ki8jTcQZe.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 204290,
+      "origin_country": [
+        "AU"
+      ],
+      "original_language": "en",
+      "original_name": "Last King of the Cross",
+      "overview": "Inspired by John Ibrahim's best-selling autobiography, this series is an operatic story of two brothers, Sam and John Ibrahim who organize the street but lose each other in their ascent to power. The story tracks John Ibrahim's rise from a poverty-stricken immigrant with no education, no money, and no prospects, to Australia's most infamous nightclub mogul in Sydney's Kings Cross — a mini-Atlantic City, barely half a mile long with every form of criminality on offer.",
+      "popularity": 18.873,
+      "poster_path": "/sA76PnIiz4EdsqsUUuDm1OPJYI7.jpg",
+      "first_air_date": "2023-02-17",
+      "name": "Last King of the Cross",
+      "vote_average": 8.0,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [
+        99
+      ],
+      "id": 62141,
+      "origin_country": [],
+      "original_language": "en",
+      "original_name": "The Last of Us Development Series",
+      "overview": "Through short documentary episodes, key features of The Last of Us  are shown.",
+      "popularity": 8.273,
+      "poster_path": null,
+      "first_air_date": "2013-02-28",
+      "name": "The Last of Us Development Series",
+      "vote_average": 0.0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yO3sF0NQIg2ViyI3wKbnVcYhXHI.jpg",
+      "genre_ids": [
+        37,
+        18
+      ],
+      "id": 13718,
+      "origin_country": [
+        "CA",
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "Hawkeye and the Last of the Mohicans",
+      "overview": "Hawkeye and the Last of the Mohicans was set in New York's Hudson Valley during the French and Indian war in the 1750's and depicted the adventures of Hawkeye and his Indian blood brother Chingachgook, the last member of the Mohican tribe. The series based on stories by James Fenimore Cooper.",
+      "popularity": 6.377,
+      "poster_path": "/2b5isBzFmNYVdazEdINnPL32rns.jpg",
+      "first_air_date": "1957-04-03",
+      "name": "Hawkeye and the Last of the Mohicans",
+      "vote_average": 5.6,
+      "vote_count": 5
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/8mNQpab95fhyR2JF4nJ6dIORwKJ.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10765
+      ],
+      "id": 92684,
+      "origin_country": [
+        "US"
+      ],
+      "original_language": "en",
+      "original_name": "The Last Kids on Earth",
+      "overview": "Os quatro amigos continuam aproveitando a vida com seus aliados monstros, mas Jack teme que a descoberta de um transmissor de áudio acabe com a diversão.",
+      "popularity": 13.185,
+      "poster_path": "/lTpGn2hgB0WGFGp6Q6ArkEWWTsk.jpg",
+      "first_air_date": "2019-09-17",
+      "name": "4 Contra o Apocalipse",
+      "vote_average": 7.8,
+      "vote_count": 21
+    }
+  ],
+  "total_pages": 15,
+  "total_results": 299
+}

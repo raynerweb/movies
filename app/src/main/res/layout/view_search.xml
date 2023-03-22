@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="br.com.raynerweb.movies.ui.fragment.SeriesFragment" />
+
+        <variable
+            name="viewModel"
+            type="br.com.raynerweb.movies.ui.viewmodel.SeriesViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="?attr/textAppearanceHeadline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/find_your_favorite_tv_show"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_query_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:hint="@string/tv_show_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_query_search"
+                style="?attr/editTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:inputType="textAutoComplete"
+                android:nextFocusDown="@id/bt_search"
+                android:text="@={viewModel.queryFilter}" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_search"
+            style="?attr/materialButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="@{fragment::saerch}"
+            android:text="@string/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_query_search" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bt_clear"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginBottom="24dp"
+            android:onClick="@{fragment::clearFilter}"
+            android:text="@string/clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_search"
+            app:layout_constraintTop_toBottomOf="@+id/til_query_search" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2019-02-15T10:59:54.300+0000",
+  "status": 500,
+  "error": "Internal Server Error",
+  "message": "Internal Server Error Message",
+  "path": "https://api.themoviedb.org/3/*"
+}
