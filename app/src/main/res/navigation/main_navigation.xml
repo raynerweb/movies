@@ -28,7 +28,11 @@
             app:argType="br.com.raynerweb.movies.ui.model.TVShow" />
         <action
             android:id="@+id/action_viewSeriesFragment_to_episodesFragment"
-            app:destination="@id/episodesFragment" />
+            app:destination="@id/episodesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/episodesFragment"
@@ -42,6 +46,10 @@
         tools:layout="@layout/fragment_series">
         <action
             android:id="@+id/action_seriesFragment_to_viewSeriesFragment"
-            app:destination="@id/viewSeriesFragment" />
+            app:destination="@id/viewSeriesFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>
