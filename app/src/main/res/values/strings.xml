@@ -6,8 +6,6 @@
     <string name="watch_now">Watch Now</string>
     <string name="search">Search</string>
     <string name="more">More</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="keywords">Keywords</string>
     <string name="no_keywords_found">No keywords found</string>
     <string name="no_tvshow_found">No TV show found</string>
