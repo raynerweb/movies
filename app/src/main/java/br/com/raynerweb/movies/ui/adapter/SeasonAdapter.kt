@@ -1,12 +1,15 @@
 package br.com.raynerweb.movies.ui.adapter
 
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import br.com.raynerweb.movies.R
 import br.com.raynerweb.movies.databinding.ViewPosterBinding
-import br.com.raynerweb.movies.ext.loadRoundedFrom
 import br.com.raynerweb.movies.ui.model.Season
+import coil.load
+import coil.transform.RoundedCornersTransformation
 
 class SeasonAdapter(
     var seasons: List<Season>,
@@ -33,7 +36,13 @@ class SeasonAdapter(
 
         fun bind(season: Season) {
             binding.season = season
-            binding.ivPoster.loadRoundedFrom(season.poster)
+            binding.ivPoster.load(
+                if (TextUtils.isEmpty(season.poster)) R.drawable.poster else season.poster
+            ) {
+                placeholder(R.drawable.poster)
+                crossfade(true)
+                transformations(RoundedCornersTransformation(10f))
+            }
             binding.root.setOnClickListener {
                 onClickListener.invoke(season)
             }
