@@ -99,7 +99,18 @@ class SeriesFragment : Fragment() {
 
     private fun subscribe() {
 
+        viewModel.loading.observe(viewLifecycleOwner) {
+            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+        }
+
+        viewModel.emptyResult.observe(viewLifecycleOwner) {
+            binding.clResults.visibility = View.GONE
+            binding.tvEmptyResult.visibility = View.VISIBLE
+        }
+
         viewModel.tvSeries.observe(viewLifecycleOwner) {
+            binding.tvEmptyResult.visibility = View.GONE
+            binding.clResults.visibility = View.VISIBLE
             binding.rvSeries.adapter = SeriesAdapter(it) { tvShow ->
                 val bundle = bundleOf(NavigationBundle.TVSHOW to tvShow)
                 findNavController()
