@@ -6,7 +6,6 @@ import androidx.lifecycle.Observer
 import br.com.raynerweb.movies.repository.SearchTVSeriesRepository
 import br.com.raynerweb.movies.test.CoroutineTestRule
 import br.com.raynerweb.movies.ui.model.Season
-import br.com.raynerweb.movies.ui.model.TVShow
 import br.com.raynerweb.movies.ui.viewmodel.ViewSeriesViewModel
 import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -82,6 +81,50 @@ class ViewSeriesViewModelTest {
 
             verify(seasonsObserver, never()).onChanged(emptyList())
             verify(emptyResultObserver, times(1)).onChanged(anyOrNull())
+            verify(loadingObserver, times(1)).onChanged(true)
+            verify(loadingObserver, times(1)).onChanged(false)
+        }
+
+    @Test
+    fun `Fetch the keywords`(): Unit =
+        runBlocking {
+            whenever(repository.fetchKeywords(anyInt())).thenReturn(listOf(""))
+
+            val keywordsObserver = spy<Observer<List<String>>>()
+            viewModel.keywords.observeForever(keywordsObserver)
+
+            val emptyKeywordsObserver = spy<Observer<Unit>>()
+            viewModel.emptyKeywords.observeForever(emptyKeywordsObserver)
+
+            val loadingObserver = spy<Observer<Boolean>>()
+            viewModel.loading.observeForever(loadingObserver)
+
+            viewModel.fetchKeywords(1)
+
+            verify(keywordsObserver).onChanged(eq(listOf("")))
+            verify(emptyKeywordsObserver, never()).onChanged(anyOrNull())
+            verify(loadingObserver, times(1)).onChanged(true)
+            verify(loadingObserver, times(1)).onChanged(false)
+        }
+
+    @Test
+    fun `No keywords found`(): Unit =
+        runBlocking {
+            whenever(repository.fetchKeywords(anyInt())).thenReturn(emptyList())
+
+            val keywordsObserver = spy<Observer<List<String>>>()
+            viewModel.keywords.observeForever(keywordsObserver)
+
+            val emptyKeywordsObserver = spy<Observer<Unit>>()
+            viewModel.emptyKeywords.observeForever(emptyKeywordsObserver)
+
+            val loadingObserver = spy<Observer<Boolean>>()
+            viewModel.loading.observeForever(loadingObserver)
+
+            viewModel.fetchKeywords(1)
+
+            verify(keywordsObserver, never()).onChanged(anyOrNull())
+            verify(emptyKeywordsObserver).onChanged(anyOrNull())
             verify(loadingObserver, times(1)).onChanged(true)
             verify(loadingObserver, times(1)).onChanged(false)
         }

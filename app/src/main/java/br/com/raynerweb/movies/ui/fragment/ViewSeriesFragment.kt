@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -61,16 +62,21 @@ class ViewSeriesFragment : Fragment() {
     }
 
     private fun setupViews() {
+
+        setupPosterRecycleView()
+
+        binding.btMore.setOnClickListener {
+            viewModel.fetchKeywords(tvShowId)
+        }
+    }
+
+    private fun setupPosterRecycleView() {
         val layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvPoster.layoutManager = layoutManager
         binding.rvPoster.addItemDecoration(
             LinearMarginDecoration.create(24, RecyclerView.HORIZONTAL)
         )
-
-        binding.btMore.setOnClickListener {
-            viewModel.fetchKeywords(tvShowId)
-        }
     }
 
     private fun subscribe() {
@@ -103,9 +109,10 @@ class ViewSeriesFragment : Fragment() {
             val dialog = BottomSheetDialog(requireContext())
             dialog.setContentView(view)
             dialog.show()
-            dialog.setOnDismissListener {
+        }
 
-            }
+        viewModel.emptyKeywords.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), getString(R.string.no_keywords_found), Toast.LENGTH_SHORT).show()
         }
 
     }
