@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import br.com.raynerweb.movies.repository.SearchTVSeriesRepository
 import br.com.raynerweb.movies.test.CoroutineTestRule
 import br.com.raynerweb.movies.ui.model.TVShow
-import br.com.raynerweb.movies.ui.viewmodel.SearchSeriesViewModel
+import br.com.raynerweb.movies.ui.viewmodel.SeriesViewModel
 import com.nhaarman.mockitokotlin2.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.ObsoleteCoroutinesApi
@@ -18,12 +18,12 @@ import org.mockito.ArgumentMatchers.anyString
 import org.mockito.InjectMocks
 import org.mockito.MockitoAnnotations
 
-class SearchSeriesViewModelTest {
+class SeriesViewModelTest {
 
     private val repository = mock<SearchTVSeriesRepository>()
 
     @InjectMocks
-    lateinit var viewModel: SearchSeriesViewModel
+    lateinit var viewModel: SeriesViewModel
 
     @ExperimentalCoroutinesApi
     @get:Rule
@@ -49,16 +49,20 @@ class SearchSeriesViewModelTest {
             val tvSeriesObserver = spy<Observer<List<TVShow>>>()
             viewModel.tvSeries.observeForever(tvSeriesObserver)
 
+            val highlightObserver = spy<Observer<TVShow>>()
+            viewModel.highlight.observeForever(highlightObserver)
+
             val emptyResultObserver = spy<Observer<Unit>>()
             viewModel.emptyResult.observeForever(emptyResultObserver)
 
             val loadingObserver = spy<Observer<Boolean>>()
             viewModel.loading.observeForever(loadingObserver)
 
-            viewModel.fetchPopular()
+            viewModel.search()
 
             verify(tvSeriesObserver).onChanged(eq(list()))
             verify(emptyResultObserver, never()).onChanged(anyOrNull())
+            verify(highlightObserver, times(1)).onChanged(list().first())
             verify(loadingObserver, times(1)).onChanged(true)
             verify(loadingObserver, times(1)).onChanged(false)
         }
@@ -71,15 +75,20 @@ class SearchSeriesViewModelTest {
             val tvSeriesObserver = spy<Observer<List<TVShow>>>()
             viewModel.tvSeries.observeForever(tvSeriesObserver)
 
+            val highlightObserver = spy<Observer<TVShow>>()
+            viewModel.highlight.observeForever(highlightObserver)
+
             val emptyResultObserver = spy<Observer<Unit>>()
             viewModel.emptyResult.observeForever(emptyResultObserver)
 
             val loadingObserver = spy<Observer<Boolean>>()
             viewModel.loading.observeForever(loadingObserver)
 
-            viewModel.fetchPopular()
+            viewModel.search()
 
             verify(tvSeriesObserver, never()).onChanged(emptyList())
+            verify(highlightObserver, never()).onChanged(anyOrNull())
+
             verify(emptyResultObserver, times(1)).onChanged(anyOrNull())
             verify(loadingObserver, times(1)).onChanged(true)
             verify(loadingObserver, times(1)).onChanged(false)
@@ -92,16 +101,21 @@ class SearchSeriesViewModelTest {
         val tvSeriesObserver = spy<Observer<List<TVShow>>>()
         viewModel.tvSeries.observeForever(tvSeriesObserver)
 
+        val highlightObserver = spy<Observer<TVShow>>()
+        viewModel.highlight.observeForever(highlightObserver)
+
         val emptyResultObserver = spy<Observer<Unit>>()
         viewModel.emptyResult.observeForever(emptyResultObserver)
 
         val loadingObserver = spy<Observer<Boolean>>()
         viewModel.loading.observeForever(loadingObserver)
 
-        viewModel.fetchByFilter("")
+        viewModel.queryFilter.postValue("some filter")
+        viewModel.search()
 
         verify(tvSeriesObserver).onChanged(eq(list()))
         verify(emptyResultObserver, never()).onChanged(anyOrNull())
+        verify(highlightObserver, times(1)).onChanged(list().first())
         verify(loadingObserver, times(1)).onChanged(true)
         verify(loadingObserver, times(1)).onChanged(false)
     }
@@ -114,19 +128,76 @@ class SearchSeriesViewModelTest {
             val tvSeriesObserver = spy<Observer<List<TVShow>>>()
             viewModel.tvSeries.observeForever(tvSeriesObserver)
 
+            val highlightObserver = spy<Observer<TVShow>>()
+            viewModel.highlight.observeForever(highlightObserver)
+
             val emptyResultObserver = spy<Observer<Unit>>()
             viewModel.emptyResult.observeForever(emptyResultObserver)
 
             val loadingObserver = spy<Observer<Boolean>>()
             viewModel.loading.observeForever(loadingObserver)
 
-            viewModel.fetchByFilter("")
+            viewModel.queryFilter.postValue("some filter")
+            viewModel.search()
 
             verify(tvSeriesObserver, never()).onChanged(emptyList())
+            verify(highlightObserver, never()).onChanged(anyOrNull())
+
             verify(emptyResultObserver, times(1)).onChanged(anyOrNull())
             verify(loadingObserver, times(1)).onChanged(true)
             verify(loadingObserver, times(1)).onChanged(false)
         }
+
+    @Test
+    fun `When the query filter is empty then need to fetch the popular series`() = runBlocking {
+        whenever(repository.fetchPopular()).thenReturn(list())
+
+        val tvSeriesObserver = spy<Observer<List<TVShow>>>()
+        viewModel.tvSeries.observeForever(tvSeriesObserver)
+
+        val highlightObserver = spy<Observer<TVShow>>()
+        viewModel.highlight.observeForever(highlightObserver)
+
+        val emptyResultObserver = spy<Observer<Unit>>()
+        viewModel.emptyResult.observeForever(emptyResultObserver)
+
+        val loadingObserver = spy<Observer<Boolean>>()
+        viewModel.loading.observeForever(loadingObserver)
+
+        viewModel.queryFilter.postValue("")
+        viewModel.search()
+
+        verify(tvSeriesObserver).onChanged(eq(list()))
+        verify(emptyResultObserver, never()).onChanged(anyOrNull())
+        verify(highlightObserver, times(1)).onChanged(list().first())
+        verify(loadingObserver, times(1)).onChanged(true)
+        verify(loadingObserver, times(1)).onChanged(false)
+    }
+
+    @Test
+    fun `When the clear method is called then fetch the popular series`() = runBlocking {
+        whenever(repository.fetchPopular()).thenReturn(list())
+
+        val tvSeriesObserver = spy<Observer<List<TVShow>>>()
+        viewModel.tvSeries.observeForever(tvSeriesObserver)
+
+        val highlightObserver = spy<Observer<TVShow>>()
+        viewModel.highlight.observeForever(highlightObserver)
+
+        val emptyResultObserver = spy<Observer<Unit>>()
+        viewModel.emptyResult.observeForever(emptyResultObserver)
+
+        val loadingObserver = spy<Observer<Boolean>>()
+        viewModel.loading.observeForever(loadingObserver)
+
+        viewModel.clearFilter()
+
+        verify(tvSeriesObserver).onChanged(eq(list()))
+        verify(emptyResultObserver, never()).onChanged(anyOrNull())
+        verify(highlightObserver, times(1)).onChanged(list().first())
+        verify(loadingObserver, times(1)).onChanged(true)
+        verify(loadingObserver, times(1)).onChanged(false)
+    }
 
     private fun list() =
         listOf(TVShow(1, "", "", "", "", ""))
