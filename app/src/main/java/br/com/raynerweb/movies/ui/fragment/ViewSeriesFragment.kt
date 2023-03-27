@@ -55,14 +55,14 @@ class ViewSeriesFragment : Fragment() {
 
             binding.tvShow = tvShow
             binding.ivPosterPath.load(
-                if (TextUtils.isEmpty(tvShow.poster)) R.drawable.poster else tvShow.poster
+                tvShow.poster.ifEmpty { R.drawable.poster }
             ) {
                 placeholder(R.drawable.poster)
                 crossfade(true)
                 transformations(RoundedCornersTransformation(10f))
             }
             binding.ivBackdrop.load(
-                if (TextUtils.isEmpty(tvShow.backdrop)) R.drawable.backdrop else tvShow.backdrop
+                tvShow.backdrop.ifEmpty { R.drawable.backdrop }
             ) {
                 placeholder(R.drawable.backdrop)
                 crossfade(true)

@@ -37,7 +37,7 @@ class SeasonAdapter(
         fun bind(season: Season) {
             binding.season = season
             binding.ivPoster.load(
-                if (TextUtils.isEmpty(season.poster)) R.drawable.poster else season.poster
+                season.poster.ifEmpty { R.drawable.poster }
             ) {
                 placeholder(R.drawable.poster)
                 crossfade(true)
