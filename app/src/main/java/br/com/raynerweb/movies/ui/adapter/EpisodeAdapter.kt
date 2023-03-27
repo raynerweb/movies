@@ -35,7 +35,7 @@ class EpisodeAdapter(
         fun bind(episode: Episode) {
             binding.episode = episode
             binding.ivPicture.load(
-                if (TextUtils.isEmpty(episode.picture)) R.drawable.episode else episode.picture
+                episode.picture.ifEmpty { R.drawable.episode }
             ) {
                 placeholder(R.drawable.episode)
                 crossfade(true)

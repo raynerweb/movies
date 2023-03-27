@@ -37,7 +37,7 @@ class SeriesAdapter(
         fun bind(tvShow: TVShow) {
             binding.tvShow = tvShow
             binding.ivPoster.load(
-                if (TextUtils.isEmpty(tvShow.poster)) R.drawable.poster else tvShow.poster
+                tvShow.poster.ifEmpty { R.drawable.poster }
             ) {
                 placeholder(R.drawable.poster)
                 crossfade(true)

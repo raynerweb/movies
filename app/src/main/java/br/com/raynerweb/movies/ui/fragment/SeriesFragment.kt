@@ -124,7 +124,7 @@ class SeriesFragment : Fragment() {
 
             binding.tvShow = it
             binding.ivBackdrop.load(
-                if (TextUtils.isEmpty(it.backdrop)) R.drawable.backdrop else it.backdrop
+                it.backdrop.ifEmpty { R.drawable.backdrop }
             ) {
                 placeholder(R.drawable.backdrop)
                 crossfade(true)
