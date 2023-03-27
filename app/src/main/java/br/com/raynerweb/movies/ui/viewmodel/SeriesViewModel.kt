@@ -51,7 +51,7 @@ class SeriesViewModel @Inject constructor(
 
     fun search() = viewModelScope.launch {
         val filter = queryFilter.value ?: ""
-        if (TextUtils.isEmpty(filter)) {
+        if (filter.isEmpty()) {
             fetchPopular()
         } else {
             try {
